@@ -1,0 +1,41 @@
+{
+  "name": "website",
+  "version": "0.0.1",
+  "main": "serve/app.js",
+  "repository": "https://github.com/emanuelmoraes-dev/website.git",
+  "author": "emanuelmoraes-dev",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "web": "webpack serve --mode=development",
+    "web:build": "webpack build",
+    "serve": "nodemon -e ts --exec \"ts-node src/serve.ts\"",
+    "serve:nw": "ts-node src/serve.ts",
+    "serve:build": "tsc src",
+    "lint": "eslint app public/js --fix"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
+    "eslint": "^9.9.0",
+    "express": "^4.19.2",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.9.0",
+    "@types/ejs": "^3.1.5",
+    "@types/express": "^4.17.21",
+    "css-loader": "^7.1.2",
+    "globals": "^15.9.0",
+    "html-webpack-plugin": "^5.6.0",
+    "less": "^4.2.0",
+    "less-loader": "^12.2.0",
+    "nodemon": "^3.1.4",
+    "style-loader": "^4.0.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.4",
+    "webpack": "^5.93.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.0.4"
+  }
+}
