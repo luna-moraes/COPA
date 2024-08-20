@@ -1,14 +1,27 @@
 import express from 'express'
-import {env, dist} from './config'
+import {env, publicPath} from './config'
+import {page} from './util'
+import {proxyService} from './services/proxy-service'
 
 const app = express()
 
 app.set('view engine', 'ejs')
-app.use(express.static(dist))
 
-app.get('/home', (req, res) => {
-    res.render('../pages/home.ejs', {user: 'Emanuel'})
+app.get('/', (_, res, next) => {
+    if (!env.proxyHtml) {
+        return next()
+    }
+
+    proxyService.request(env.proxyHtml)
+        .then(data => res.send(data))
+        .catch(next)
 })
+
+app.get('/home', (_, res) => {
+    res.render(page('home'), {user: 'Emanuel'})
+})
+
+app.use(express.static(publicPath))
 
 app.listen(env.port, () => {
     console.log('listening on', env.port)

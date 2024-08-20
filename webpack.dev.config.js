@@ -1,12 +1,17 @@
 const webpack = require('webpack')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
 const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
-    entry: './public/js/index.js',
+    mode: 'development',
+    entry: './assets/js/index.js',
+    devServer: {
+        port: 8000,
+    },
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'index.js',
+        publicPath: 'http://localhost:8000/',
     },
     module: {rules: [
         {
@@ -15,6 +20,6 @@ module.exports = {
         },
     ]},
     plugins: [
-        new HtmlWebpackPlugin({template: './public/index.html'}),
+        new HtmlWebpackPlugin({template: './assets/index.html'}),
     ],
 }
