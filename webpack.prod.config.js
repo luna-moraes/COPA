@@ -8,7 +8,7 @@ module.exports = {
     entry: './assets/js/index.js',
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'index.js',
+        filename: '[name].[contenthash].js',
     },
     module: {rules: [
         {
@@ -31,4 +31,13 @@ module.exports = {
             }],
         }),
     ],
+    optimization: {
+        moduleIds: 'deterministic',
+        runtimeChunk: 'single',
+        splitChunks: {cacheGroups: {vendor: {
+            test: /[\\/]node_modules[\\/]/,
+            name: 'vendors',
+            chunks: 'all',
+        }}},
+    }
 }
