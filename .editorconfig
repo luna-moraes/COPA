@@ -5,3 +5,15 @@ insert_final_newline = true
 [*.js]
 indent_size = 4
 indent_style = space
+
+[*.{html,ejs}]
+indent_size = 2
+indent_style = space
+
+[*.{css,less}]
+indent_size = 2
+indent_style = space
+
+[*.yml]
+indent_size = 4
+indent_style = space

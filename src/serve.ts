@@ -1,5 +1,5 @@
 import express from 'express'
-import {env, publicPath} from './config'
+import {content, env, publicPath} from './config'
 import {page} from './util'
 import {proxyService} from './services/proxy-service'
 
@@ -18,7 +18,11 @@ app.get('/', (_, res, next) => {
 })
 
 app.get('/home', (_, res) => {
-    res.render(page('home'), {user: 'Emanuel'})
+    res.render(page('home'), content.inicio)
+})
+
+app.get('/team', (_, res) => {
+    res.render(page('team'), content.equipe)
 })
 
 app.use(express.static(publicPath))

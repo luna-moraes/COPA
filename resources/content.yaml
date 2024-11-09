@@ -1,0 +1,52 @@
+inicio:
+    cor:
+        titulo: black
+        texto: black
+        botao: white
+    fundo:
+        botao: orange
+    titulo: Semente
+    subtitulo: Espaço de psicologia e psicanálise
+    mensagem: |-
+        Somos um espaço online que oferta escuta especializada por
+        profissionais em constante formação e atentos à uma ética de trabalho
+        própria de nosso fazer.
+    botao: Entre em contato
+equipe:
+    cor:
+        titulo: orange
+        texto: black
+        botao: white
+    fundo:
+        botao: orange
+    profissionais:
+        - imagem: foto_perfil.png
+          nome: Luna Moraes de Almeida
+          formacao: PSICÓLOGA E PSICANALISTA
+          mensagem: caixa de texto
+          crp: 11/21449
+          contato: "88991112222"
+        - imagem: foto_pergil.png
+          nome: Débora Teresa dos Santos Meneses
+          formacao: PSICÓLOGA E PSICANALISTA
+          mensagem: caixa de texto
+          crp: 17/7450
+          contato: "88991112222"
+        - imagem: foto_perfil.png
+          nome: Júlio César Oliveira Filho
+          formacao: PSICÓLOGO E PSICANALISTA
+          mensagem: caixa de texto
+          crp: 11/19441
+          contato: "88991112222"
+rodape:
+    cor:
+        titulo: black
+        texto: black
+    esquerda:
+        titulo: Semente
+        subtitulo: Espaço de psicologia e psicanálise
+    direita:
+        titulo: Contato
+        descricao: |-
+            email@exemplo.com
+            (555) 555-5555
