@@ -1,3 +1,17 @@
-<div id="home" class="pure-g" style="<%= styles.texto ?? '' %>">
-  
+<div id="home">
+  <div class="content">
+    <h1 class="title" style="<%= styles.titulo ?? '' %>">
+      <%= titulo %>
+    </h1>
+
+    <h2 class="subtitle" style="<%= styles.subtitulo ?? '' %>">
+      <%= subtitulo %>
+    </h2>
+
+    <p class="message" style="<%= styles.mensagem ?? '' %>"><%= mensagem %></p>
+
+    <a style="<%= styles.botao ?? '' %>" class="button bordered-button" href="#team">
+      <%= botao %>
+    </a>
+  </div>
 </div>

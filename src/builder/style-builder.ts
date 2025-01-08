@@ -2,6 +2,9 @@ export interface StyleOptions {
     cor?: string
     sombra?: string
     fundo?: string
+    fonte?: string
+    espaco?: string
+    preenchimento?: string
 }
 
 export const buildStyle = (options: StyleOptions): string => {
@@ -16,14 +19,36 @@ export const buildStyle = (options: StyleOptions): string => {
     const backgroundColor = options.fundo
         ? `background-color: ${options.fundo};`
         : ''
+
+    const font = options.fonte
+        ? `font-size: ${options.fonte};`
+        : ''
+
+    const margin = options.espaco
+        ? `margin: ${options.espaco};`
+        : ''
+
+    const padding = options.preenchimento
+        ? `padding: ${options.preenchimento};`
+        : ''
     
-    return [color, textShadow, backgroundColor].join('')
+    return [
+        color,
+        textShadow,
+        backgroundColor,
+        font,
+        margin,
+        padding,
+    ].join('')
 }
 
 export interface WithStyleOptions<K extends string> {
     cor?: Record<K, string>
     sombra?: Record<K, string>
     fundo?: Record<K, string>
+    fonte?: Record<K, string>
+    espaco?: Record<K, string>
+    preenchimento?: Record<K, string>
 }
 
 export type Styles<K extends string> = Record<K, string | undefined>
@@ -37,6 +62,9 @@ export const buildWithStyle =
             ...(options.cor ?? {}),
             ...(options.sombra ?? {}),
             ...(options.fundo ?? {}),
+            ...(options.fonte ?? {}),
+            ...(options.espaco ?? {}),
+            ...(options.preenchimento ?? {}),
         }) as K[]
 
         return {
@@ -45,7 +73,10 @@ export const buildWithStyle =
                 styles[name] = buildStyle({
                     cor: options.cor?.[name],
                     sombra: options.sombra?.[name],
-                    fundo: options.fundo?.[name]
+                    fundo: options.fundo?.[name],
+                    fonte: options.fonte?.[name],
+                    espaco: options.espaco?.[name],
+                    preenchimento: options.preenchimento?.[name],
                 })
                 return styles
             }, {} as Styles<K>)

@@ -1,10 +1,20 @@
 inicio:
     cor:
         titulo: black
-        texto: black
+        subtitulo: black
+        mensagem: black
         botao: white
     fundo:
         botao: orange
+    fonte:
+        titulo: 2.5rem
+        subtitulo: 1rem
+    preenchimento:
+        botao: 1rem 1.5rem
+    espaco:
+        titulo: 0 0 .8rem 0
+        subtitulo: 0 0 1.4rem 0
+        mensagem: 0 0 3rem 0
     titulo: Semente
     subtitulo: Espaço de psicologia e psicanálise
     mensagem: |-
