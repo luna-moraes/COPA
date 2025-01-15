@@ -21,12 +21,16 @@ app.get('/home', (_, res) => {
     res.render(page('home'), content.inicio)
 })
 
+app.get('/about', (_, res) => {
+    res.render(page('about'), content.sobre)
+})
+
 app.get('/team', (_, res) => {
     res.render(page('team'), content.equipe)
 })
 
-app.get('/rodape', (_, res) => {
-    res.render(page('rodape'), content.rodape)
+app.get('/footer', (_, res) => {
+    res.render(page('footer'), content.rodape)
 })
 
 app.use(express.static(publicPath))

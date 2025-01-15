@@ -25,6 +25,29 @@ inicio:
         titulo: 0 0 .8rem 0
         subtitulo: 0 0 1.4rem 0
         mensagem: 0 0 3rem 0
+sobre:
+    # Conteúdo do Sobre Nosso Trabalho
+    titulo: Um pouco sobre nosso trabalho
+    descricao: |-
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Nullam consectetur auctor molestie. Sed ac dolor elementum
+        sem consequat ultricies. Nulla at justo urna. In vehicula
+        est eget justo egestas congue. Morbi luctus euismod sapien,
+        eu congue lectus congue gravida. Lorem ipsum dolor sit amet,
+        consectetur adipiscing elit. Phasellus nisl quam, convallis
+        eu purus vitae, elementum ultrices erat. Mauris at quam
+        fringilla, tincidunt orci quis, volutpat est. Nulla tellus
+        lacus, iaculis quis metus non, porta ornare ligula. Curabitur
+        porttitor eros ornare, tempus urna et, commodo lectus. Morbi
+        convallis lacinia enim ac dictum.
+
+    # Estilo do Sobre Nosso Trabalho
+    cor:
+        titulo: black
+        descricao: black
+    fonte:
+        titulo: 1.5rem
+        descricao: 1rem
 equipe:
     # Conteúdo da Equipe
     titulo: Nossa Equipe
@@ -53,7 +76,7 @@ equipe:
 
     # Estilo da Equipe
     cor:
-        titulo: orange
+        titulo: black
         nome: black
         formacao: black
         descricao: black
@@ -62,7 +85,7 @@ equipe:
     fundo:
         botao: orange
     fonte:
-        titulo: 1.2rem
+        titulo: 1.5rem
         nome: 1.1rem
         formacao: 1.1rem
         descricao: 1.1rem

@@ -1,6 +1,6 @@
 <div id="team">
   <div class="header">
-    <h2 class="title">
+    <h2 class="title" style="<%= styles.titulo %>">
       <%= titulo %>
     </h1>
   </div>
@@ -15,23 +15,23 @@
           src="/img/<%= prof.foto %>"
           alt="foto"
         >
-        <h3 class="name" style="<%= styles.nome %>">
+        <h3 class="name" style="<%= styles.nome ?? '' %>">
           <%= prof.nome %>
         </h2>
-        <p class="graduation" style="<%= styles.formacao %>">
+        <p class="graduation" style="<%= styles.formacao ?? '' %>">
           <%= prof.formacao %>
         </p>
-        <p class="description" style="<%= styles.descricao %>">
+        <p class="description" style="<%= styles.descricao ?? '' %>">
           <%= prof.descricao %>
         </p>
-        <p class="crp" style="<%= styles.crp %>">
+        <p class="crp" style="<%= styles.crp ?? '' %>">
           <%= prof.crp %>
         </p>
         <a
           class="button bordered-button"
           href="https://wa.me/<%= prof.contato %>"
           target=_blank
-          style="<%= styles.botao %>"
+          style="<%= styles.botao ?? '' %>"
         >
           <%= prof.botao %>
         </a>

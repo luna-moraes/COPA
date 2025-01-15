@@ -1,4 +1,4 @@
-import z from 'zod'
+import z, { ZodObject, ZodOptional, ZodString, ZodTypeAny } from 'zod'
 import {buildWithStyle} from '../builder/style-builder'
 
 export const ContentSchema = z.object({
@@ -10,43 +10,31 @@ export const ContentSchema = z.object({
         botao: z.string(),
 
         // Estilo do Início
-        cor: z.object({
-            titulo: z.string().optional(),
-            subtitulo: z.string().optional(),
-            mensagem: z.string().optional(),
-            botao: z.string().optional(),
-        }).optional(),
-        sombra: z.object({
-            titulo: z.string().optional(),
-            subtitulo: z.string().optional(),
-            mensagem: z.string().optional(),
-        }).optional(),
-        fundo: z.object({
-            botao: z.string().optional(),
-        }).optional(),
-        fonte: z.object({
-            titulo: z.string().optional(),
-            subtitulo: z.string().optional(),
-            mensagem: z.string().optional(),
-            botao: z.string().optional(),
-        }).optional(),
-        peso: z.object({
-            titulo: z.string().optional(),
-            subtitulo: z.string().optional(),
-            mensagem: z.string().optional(),
-            botao: z.string().optional(),
-        }).optional(),
-        espaco: z.object({
-            titulo: z.string().optional(),
-            subtitulo: z.string().optional(),
-            mensagem: z.string().optional(),
-        }).optional(),
-        preenchimento: z.object({
-            titulo: z.string().optional(),
-            subtitulo: z.string().optional(),
-            mensagem: z.string().optional(),
-            botao: z.string().optional(),
-        }).optional(),
+        ...buildStyledProps({
+            cor: ['titulo', 'subtitulo', 'mensagem', 'botao'],
+            fonte: ['titulo', 'subtitulo', 'mensagem', 'botao'],
+            peso: ['titulo', 'subtitulo', 'mensagem', 'botao'],
+            sombra: ['titulo', 'subtitulo', 'mensagem', 'botao'],
+            preenchimento: ['titulo', 'subtitulo', 'mensagem', 'botao'],
+            espaco: ['titulo', 'subtitulo', 'mensagem'],
+            fundo: ['botao'],
+        }),
+    }),
+    sobre: z.object({
+        // Conteúdo do Sobre Nosso Trabalho
+        titulo: z.string().optional(),
+        descricao: z.string().optional(),
+
+        // Estilo do Sobre Nosso Trabalho
+        ...buildStyledProps({
+            cor: ['titulo', 'descricao'],
+            fonte: ['titulo', 'descricao'],
+            peso: ['titulo', 'descricao'],
+            sombra: ['titulo', 'descricao'],
+            preenchimento: ['titulo', 'descricao'],
+            espaco: ['titulo', 'descricao'],
+            fundo: ['titulo', 'descricao'],
+        }),
     }),
     equipe: z.object({
         // Conteúdo da Equipe
@@ -62,60 +50,17 @@ export const ContentSchema = z.object({
         }).array(),
 
         // Estilo da Equipe
-        cor: z.object({
-            titulo: z.string().optional(),
-            nome: z.string().optional(),
-            formacao: z.string().optional(),
-            descricao: z.string().optional(),
-            crp: z.string().optional(),
-            botao: z.string().optional(),
-        }).optional(),
-        sombra: z.object({
-            titulo: z.string().optional(),
-            nome: z.string().optional(),
-            formacao: z.string().optional(),
-            descricao: z.string().optional(),
-            crp: z.string().optional(),
-        }).optional(),
-        fundo: z.object({
-            botao: z.string().optional(),
-        }).optional(),
-        fonte: z.object({
-            titulo: z.string().optional(),
-            nome: z.string().optional(),
-            formacao: z.string().optional(),
-            descricao: z.string().optional(),
-            crp: z.string().optional(),
-            botao: z.string().optional(),
-        }).optional(),
-        peso: z.object({
-            titulo: z.string().optional(),
-            nome: z.string().optional(),
-            formacao: z.string().optional(),
-            descricao: z.string().optional(),
-            crp: z.string().optional(),
-            botao: z.string().optional(),
-        }).optional(),
-        espaco: z.object({
-            titulo: z.string().optional(),
-            nome: z.string().optional(),
-            formacao: z.string().optional(),
-            descricao: z.string().optional(),
-            crp: z.string().optional(),
-            profissionais: z.string().optional(),
-        }).optional(),
-        preenchimento: z.object({
-            titulo: z.string().optional(),
-            nome: z.string().optional(),
-            formacao: z.string().optional(),
-            descricao: z.string().optional(),
-            crp: z.string().optional(),
-            botao: z.string().optional(),
-            primeiro_profissional: z.string().optional(),
-            ultimo_profissional: z.string().optional(),
-            profissional: z.string().optional(),
-            profissionais: z.string().optional(),
-        }).optional(),
+        ...buildStyledProps({
+            cor: ['titulo', 'nome', 'formacao', 'descricao', 'crp', 'botao'],
+            fonte: ['titulo', 'nome', 'formacao', 'descricao', 'crp', 'botao'],
+            peso: ['titulo', 'nome', 'formacao', 'descricao', 'crp', 'botao'],
+            sombra: ['titulo', 'nome', 'formacao', 'descricao', 'crp', 'botao'],
+            preenchimento: ['titulo', 'nome', 'formacao', 'descricao', 'crp', 'botao',
+                'primeiro_profissional', 'ultimo_profissional', 'profissional',
+                'profissionais'],
+            espaco: ['titulo', 'nome', 'formacao', 'descricao', 'crp', 'profissionais'],
+            fundo: ['botao'],
+        }),
     }),
     rodape: z.object({
         esquerda: z.object({
@@ -124,30 +69,15 @@ export const ContentSchema = z.object({
             subtitulo: z.string(),
 
             // Estilo Esquerdo do Rodapé
-            cor: z.object({
-                titulo: z.string().optional(),
-                subtitulo: z.string().optional(),
-            }).optional(),
-            sombra: z.object({
-                titulo: z.string().optional(),
-                subtitulo: z.string().optional(),
-            }).optional(),
-            fonte: z.object({
-                titulo: z.string().optional(),
-                subtitulo: z.string().optional(),
-            }).optional(),
-            peso: z.object({
-                titulo: z.string().optional(),
-                subtitulo: z.string().optional(),
-            }).optional(),
-            espaco: z.object({
-                titulo: z.string().optional(),
-                subtitulo: z.string().optional(),
-            }).optional(),
-            preenchimento: z.object({
-                titulo: z.string().optional(),
-                subtitulo: z.string().optional(),
-            }).optional(),
+            ...buildStyledProps({
+                cor: ['titulo', 'subtitulo'],
+                fonte: ['titulo', 'subtitulo'],
+                peso: ['titulo', 'subtitulo'],
+                sombra: ['titulo', 'subtitulo'],
+                preenchimento: ['titulo', 'subtitulo'],
+                espaco: ['titulo', 'subtitulo'],
+                fundo: ['titulo', 'subtitulo'],
+            }),
         }),
         direita: z.object({
             // Conteúdo Direito do Rodapé
@@ -155,30 +85,15 @@ export const ContentSchema = z.object({
             descricao: z.string().trim(),
 
             // Estilo Direito do Rodapé
-            cor: z.object({
-                titulo: z.string().optional(),
-                descricao: z.string().optional(),
-            }).optional(),
-            sombra: z.object({
-                titulo: z.string().optional(),
-                descricao: z.string().optional(),
-            }).optional(),
-            fonte: z.object({
-                titulo: z.string().optional(),
-                descricao: z.string().optional(),
-            }).optional(),
-            peso: z.object({
-                titulo: z.string().optional(),
-                descricao: z.string().optional(),
-            }).optional(),
-            espaco: z.object({
-                titulo: z.string().optional(),
-                descricao: z.string().optional(),
-            }).optional(),
-            preenchimento: z.object({
-                titulo: z.string().optional(),
-                descricao: z.string().optional(),
-            }).optional(), 
+            ...buildStyledProps({
+                cor: ['titulo', 'descricao'],
+                fonte: ['titulo', 'descricao'],
+                peso: ['titulo', 'descricao'],
+                sombra: ['titulo', 'descricao'],
+                preenchimento: ['titulo', 'descricao'],
+                espaco: ['titulo', 'descricao'],
+                fundo: ['titulo', 'descricao'],
+            }),
         }),
     }),
 })
@@ -189,6 +104,8 @@ export const ContentModel = ContentSchema
         ...content,
         inicio: buildWithStyle(content.inicio,
             ['titulo', 'subtitulo', 'mensagem', 'botao']),
+        sobre: buildWithStyle(content.sobre,
+            ['titulo', 'descricao']),
         equipe: buildWithStyle(content.equipe,
             ['titulo', 'subtitulo', 'descricao', 'informacao', 'botao']),
         rodape: {
@@ -200,3 +117,31 @@ export const ContentModel = ContentSchema
     }))
 
 export type Content = z.infer<typeof ContentModel>
+
+type StyledKey = 'cor' | 'sombra' | 'fundo' | 'fonte' | 'peso' | 'espaco' | 'preenchimento'
+function buildStyledProps<P extends string>(styled: Record<StyledKey, P[]>) {
+    const result = {
+        cor: z.object({} as Record<P, ZodOptional<ZodString>>).optional(),
+        sombra: z.object({} as Record<P, ZodOptional<ZodString>>).optional(),
+        fundo: z.object({} as Record<P, ZodOptional<ZodString>>).optional(),
+        fonte: z.object({} as Record<P, ZodOptional<ZodString>>).optional(),
+        peso: z.object({} as Record<P, ZodOptional<ZodString>>).optional(),
+        espaco: z.object({} as Record<P, ZodOptional<ZodString>>).optional(),
+        preenchimento: z.object({} as Record<P, ZodOptional<ZodString>>).optional(),
+    }
+
+    const styledKeys = Object.keys(styled) as StyledKey[]
+
+    for (const styledKey of styledKeys) {
+        const propsShape: Partial<Record<P, ZodOptional<ZodString>>> = {}
+
+        const props = styled[styledKey]
+        for (const prop of props) {
+            propsShape[prop] = z.string().optional()
+        }
+
+        result[styledKey] = z.object(propsShape as Record<P, ZodOptional<ZodString>>).optional()
+    }
+
+    return result
+}
