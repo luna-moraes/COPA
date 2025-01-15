@@ -7,17 +7,17 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "start": "node server/serve.js",
+    "start": "dotenvx run -f .env.prod -- node server/serve.js",
     "web": "webpack serve --mode=development --config webpack.dev.config.js",
     "web:build": "webpack build --mode=production --config webpack.prod.config.js",
-    "serve": "nodemon -e ts,yaml,ejs,less,html --exec \"ts-node src/serve.ts\"",
-    "serve:nw": "ts-node src/serve.ts",
+    "serve": "nodemon -e ts,yaml,ejs,less,html --exec \"dotenvx run -f .env.dev -- ts-node src/serve.ts\"",
+    "serve:nw": "dotenvx run -f .env.dev -- ts-node src/serve.ts",
     "serve:build": "tsc",
     "lint": "eslint app public/js --fix"
   },
   "dependencies": {
+    "@dotenvx/dotenvx": "^1.33.0",
     "axios": "^1.7.4",
-    "dotenv": "^16.4.5",
     "ejs": "^3.1.10",
     "eslint": "^9.9.0",
     "express": "^4.19.2",
