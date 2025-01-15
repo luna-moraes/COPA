@@ -1,8 +1,8 @@
 {
-  "name": "website",
+  "name": "semente",
   "version": "0.0.1",
   "main": "server/serve.js",
-  "repository": "https://github.com/emanuelmoraes-dev/website.git",
+  "repository": "https://github.com/emanuelmoraes-dev/semente.git",
   "author": "emanuelmoraes-dev",
   "license": "MIT",
   "private": true,
