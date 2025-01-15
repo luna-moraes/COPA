@@ -23,6 +23,12 @@ export const ContentSchema = z.object({
             mensagem: z.string().optional(),
             botao: z.string().optional(),
         }).optional(),
+        peso: z.object({
+            titulo: z.string().optional(),
+            subtitulo: z.string().optional(),
+            mensagem: z.string().optional(),
+            botao: z.string().optional(),
+        }).optional(),
         espaco: z.object({
             titulo: z.string().optional(),
             subtitulo: z.string().optional(),
@@ -66,6 +72,14 @@ export const ContentSchema = z.object({
             crp: z.string().optional(),
             botao: z.string().optional(),
         }).optional(),
+        peso: z.object({
+            titulo: z.string().optional(),
+            nome: z.string().optional(),
+            formacao: z.string().optional(),
+            descricao: z.string().optional(),
+            crp: z.string().optional(),
+            botao: z.string().optional(),
+        }).optional(),
         espaco: z.object({
             titulo: z.string().optional(),
             nome: z.string().optional(),
@@ -94,6 +108,7 @@ export const ContentSchema = z.object({
             descricao: z.string().trim(),
             crp: z.string(),
             contato: z.string(),
+            botao: z.string(),
         }).array()
     }),
     rodape: z.object({
@@ -106,6 +121,11 @@ export const ContentSchema = z.object({
             texto: z.string().optional(),
         }).optional(),
         fonte: z.object({
+            titulo: z.string().optional(),
+            texto: z.string().optional(),
+            botao: z.string().optional(),
+        }).optional(),
+        peso: z.object({
             titulo: z.string().optional(),
             texto: z.string().optional(),
             botao: z.string().optional(),

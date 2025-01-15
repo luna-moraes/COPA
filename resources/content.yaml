@@ -38,11 +38,16 @@ equipe:
         formacao: 1.1rem
         descricao: 1.1rem
         crp: 1.1rem
+        botao: .9rem
+    peso:
+        botao: bold
     preenchimento:
+        crp: 0 0 .5rem 0
+        botao: .7rem 1.2rem
         primeiro_profissional: 0 3.33rem 1rem 0
         ultimo_profissional: 0 0 0 3.33rem
         profissional: 0 1.66rem 1rem 1.66rem
-        profissionais: 0 0 1rem 0
+        profissionais: 0 0 2rem 0
     titulo: Nossa Equipe
     profissionais:
         - foto: foto_perfil.png
@@ -50,19 +55,22 @@ equipe:
           formacao: PSICÓLOGA E PSICANALISTA
           descricao: caixa de texto
           crp: 11/21449
-          contato: "88991112222"
+          contato: "5588991112222"
+          botao: "Entre em Contato"
         - foto: foto_perfil.png
           nome: Débora Teresa dos Santos Meneses
           formacao: PSICÓLOGA E PSICANALISTA
           descricao: caixa de texto
           crp: 17/7450
-          contato: "88991112222"
+          contato: "5588991112222"
+          botao: "Entre em Contato"
         - foto: foto_perfil.png
           nome: Júlio César Oliveira Filho
           formacao: PSICÓLOGO E PSICANALISTA
           descricao: caixa de texto
           crp: 11/19441
-          contato: "88991112222"
+          contato: "5588991112222"
+          botao: "Entre em Contato"
 rodape:
     cor:
         titulo: black

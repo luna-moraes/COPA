@@ -3,6 +3,7 @@ export interface StyleOptions {
     sombra?: string
     fundo?: string
     fonte?: string
+    peso?: string
     espaco?: string
     preenchimento?: string
 }
@@ -24,6 +25,10 @@ export const buildStyle = (options: StyleOptions): string => {
         ? `font-size: ${options.fonte};`
         : ''
 
+    const fontWeight = options.peso
+        ? `font-weight: ${options.peso};`
+        : ''
+
     const margin = options.espaco
         ? `margin: ${options.espaco};`
         : ''
@@ -37,6 +42,7 @@ export const buildStyle = (options: StyleOptions): string => {
         textShadow,
         backgroundColor,
         font,
+        fontWeight,
         margin,
         padding,
     ].join('')
@@ -47,6 +53,7 @@ export interface WithStyleOptions<K extends string> {
     sombra?: Record<K, string>
     fundo?: Record<K, string>
     fonte?: Record<K, string>
+    peso?: Record<K, string>
     espaco?: Record<K, string>
     preenchimento?: Record<K, string>
 }
@@ -63,6 +70,7 @@ export const buildWithStyle =
             ...(options.sombra ?? {}),
             ...(options.fundo ?? {}),
             ...(options.fonte ?? {}),
+            ...(options.peso ?? {}),
             ...(options.espaco ?? {}),
             ...(options.preenchimento ?? {}),
         }) as K[]
@@ -75,6 +83,7 @@ export const buildWithStyle =
                     sombra: options.sombra?.[name],
                     fundo: options.fundo?.[name],
                     fonte: options.fonte?.[name],
+                    peso: options.peso?.[name],
                     espaco: options.espaco?.[name],
                     preenchimento: options.preenchimento?.[name],
                 })
