@@ -1,4 +1,14 @@
 inicio:
+    # Conteúdo do Início
+    titulo: Semente
+    subtitulo: Espaço de psicologia e psicanálise
+    mensagem: |-
+        Somos um espaço online que oferta escuta especializada por
+        profissionais em constante formação e atentos à uma ética de trabalho
+        própria de nosso fazer.
+    botao: Entre em contato
+
+    # Estilo do Início
     cor:
         titulo: black
         subtitulo: black
@@ -15,14 +25,33 @@ inicio:
         titulo: 0 0 .8rem 0
         subtitulo: 0 0 1.4rem 0
         mensagem: 0 0 3rem 0
-    titulo: Semente
-    subtitulo: Espaço de psicologia e psicanálise
-    mensagem: |-
-        Somos um espaço online que oferta escuta especializada por
-        profissionais em constante formação e atentos à uma ética de trabalho
-        própria de nosso fazer.
-    botao: Entre em contato
 equipe:
+    # Conteúdo da Equipe
+    titulo: Nossa Equipe
+    profissionais:
+        - foto: foto_perfil.png
+          nome: Luna Moraes de Almeida
+          formacao: PSICÓLOGA E PSICANALISTA
+          descricao: caixa de texto
+          crp: 11/21449
+          contato: "5588991112222"
+          botao: "Entre em Contato"
+        - foto: foto_perfil.png
+          nome: Débora Teresa dos Santos Meneses
+          formacao: PSICÓLOGA E PSICANALISTA
+          descricao: caixa de texto
+          crp: 17/7450
+          contato: "5588991112222"
+          botao: "Entre em Contato"
+        - foto: foto_perfil.png
+          nome: Júlio César Oliveira Filho
+          formacao: PSICÓLOGO E PSICANALISTA
+          descricao: caixa de texto
+          crp: 11/19441
+          contato: "5588991112222"
+          botao: "Entre em Contato"
+
+    # Estilo da Equipe
     cor:
         titulo: orange
         nome: black
@@ -48,38 +77,37 @@ equipe:
         ultimo_profissional: 0 0 0 3.33rem
         profissional: 0 1.66rem 1rem 1.66rem
         profissionais: 0 0 2rem 0
-    titulo: Nossa Equipe
-    profissionais:
-        - foto: foto_perfil.png
-          nome: Luna Moraes de Almeida
-          formacao: PSICÓLOGA E PSICANALISTA
-          descricao: caixa de texto
-          crp: 11/21449
-          contato: "5588991112222"
-          botao: "Entre em Contato"
-        - foto: foto_perfil.png
-          nome: Débora Teresa dos Santos Meneses
-          formacao: PSICÓLOGA E PSICANALISTA
-          descricao: caixa de texto
-          crp: 17/7450
-          contato: "5588991112222"
-          botao: "Entre em Contato"
-        - foto: foto_perfil.png
-          nome: Júlio César Oliveira Filho
-          formacao: PSICÓLOGO E PSICANALISTA
-          descricao: caixa de texto
-          crp: 11/19441
-          contato: "5588991112222"
-          botao: "Entre em Contato"
 rodape:
-    cor:
-        titulo: black
-        texto: black
+    # Lado Esquerdo do Rodapé
     esquerda:
+        # Conteúdo Esquerdo do Rodapé
         titulo: Semente
         subtitulo: Espaço de psicologia e psicanálise
+
+        # Estilo Esquerdo do Rodapé
+        cor:
+            titulo: black
+            subtitulo: black
+        fonte:
+            titulo: 1.5rem
+            subtitulo: 1rem
+        espaco:
+            titulo: 5rem 0 0 0
+
+    # Lado Direito do Rodapé
     direita:
+        # Conteúdo Direito do Rodapé
         titulo: Contato
         descricao: |-
             email@exemplo.com
-            (555) 555-5555
+            (88) 95555-5555
+
+        # Estilo Direito do Rodapé
+        cor:
+            titulo: black
+            descricao: black
+        fonte:
+            titulo: 1.5rem
+            descricao: 1rem
+        espaco:
+            titulo: 5rem 0 0 0

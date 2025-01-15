@@ -25,6 +25,10 @@ app.get('/team', (_, res) => {
     res.render(page('team'), content.equipe)
 })
 
+app.get('/rodape', (_, res) => {
+    res.render(page('rodape'), content.rodape)
+})
+
 app.use(express.static(publicPath))
 
 app.listen(env.port, () => {
