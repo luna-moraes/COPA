@@ -1,3 +1,19 @@
 #team {
-  
+  display: flex;
+  flex-direction: column;
+
+  .header {
+    display: flex;
+    justify-content: center;
+  }
+
+  .professional {
+    box-sizing: border-box;
+
+    @media screen and (min-width: 48em) {
+      & {
+        padding-bottom: 0 !important;
+      }
+    }
+  }
 }

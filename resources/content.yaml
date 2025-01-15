@@ -25,27 +25,42 @@ inicio:
 equipe:
     cor:
         titulo: orange
-        texto: black
+        nome: black
+        formacao: black
+        descricao: black
+        crp: black
         botao: white
     fundo:
         botao: orange
+    fonte:
+        titulo: 1.2rem
+        nome: 1.1rem
+        formacao: 1.1rem
+        descricao: 1.1rem
+        crp: 1.1rem
+    preenchimento:
+        primeiro_profissional: 0 3.33rem 1rem 0
+        ultimo_profissional: 0 0 0 3.33rem
+        profissional: 0 1.66rem 1rem 1.66rem
+        profissionais: 0 0 1rem 0
+    titulo: Nossa Equipe
     profissionais:
-        - imagem: foto_perfil.png
+        - foto: foto_perfil.png
           nome: Luna Moraes de Almeida
           formacao: PSICÓLOGA E PSICANALISTA
-          mensagem: caixa de texto
+          descricao: caixa de texto
           crp: 11/21449
           contato: "88991112222"
-        - imagem: foto_pergil.png
+        - foto: foto_perfil.png
           nome: Débora Teresa dos Santos Meneses
           formacao: PSICÓLOGA E PSICANALISTA
-          mensagem: caixa de texto
+          descricao: caixa de texto
           crp: 17/7450
           contato: "88991112222"
-        - imagem: foto_perfil.png
+        - foto: foto_perfil.png
           nome: Júlio César Oliveira Filho
           formacao: PSICÓLOGO E PSICANALISTA
-          mensagem: caixa de texto
+          descricao: caixa de texto
           crp: 11/19441
           contato: "88991112222"
 rodape:

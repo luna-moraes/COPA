@@ -1,3 +1,33 @@
 <div id="team">
-  
+  <div class="header">
+    <h1 class="title">
+      <%= titulo %>
+    </h1>
+  </div>
+  <div class="professionals pure-g" style="<%= styles.profissionais %>">
+    <% for (const [index, prof] of profissionais.entries()) { %>
+      <div
+        class="professional pure-u-1 pure-u-md-1-3"
+        style="<%= styles.profissional %><%= (index === 0) ? (styles.primeiro_profissional) : ('') %><%= (index+1 === profissionais.length) ? (styles.ultimo_profissional) : ('') %>"
+      >
+        <img
+          class="image pure-img"
+          src="/img/<%= prof.foto %>"
+          alt="foto"
+        >
+        <h2 class="name" style="<%= styles.nome %>">
+          <%= prof.nome %>
+        </h2>
+        <p class="graduation" style="<%= styles.formacao %>">
+          <%= prof.formacao %>
+        </p>
+        <p class="description" style="<%= styles.descricao %>">
+          <%= prof.descricao %>
+        </p>
+        <p class="crp" style="<%= styles.crp %>">
+          <%= prof.crp %>
+        </p>
+      </div>
+    <% } %>
+  </div>
 </div>
