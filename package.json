@@ -8,6 +8,7 @@
   "private": true,
   "scripts": {
     "start": "dotenvx run -f .env.prod -- node server/serve.js",
+    "start:w": "nodemon -e yaml,html --exec \"dotenvx run -f .env.prod -- node server/serve.js\"",
     "web": "webpack serve --mode=development --config webpack.dev.config.js",
     "web:build": "webpack build --mode=production --config webpack.prod.config.js",
     "serve": "nodemon -e ts,yaml,ejs,less,html --exec \"dotenvx run -f .env.dev -- ts-node src/serve.ts\"",
