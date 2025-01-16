@@ -96,9 +96,9 @@ equipe:
     preenchimento:
         crp: 0 0 .5rem 0
         botao: .7rem 1.2rem
-        primeiro_profissional: 0 3.33rem 1rem 0
-        ultimo_profissional: 0 0 0 3.33rem
-        profissional: 0 1.66rem 1rem 1.66rem
+        primeiro_profissional: 0 3.33rem 0 0
+        ultimo_profissional: 3rem 0 0 3.33rem
+        profissional: 3rem 1.66rem 0 1.66rem
         profissionais: 0 0 2rem 0
 rodape:
     # Lado Esquerdo do Rodapé
