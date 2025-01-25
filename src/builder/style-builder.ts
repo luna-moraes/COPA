@@ -1,15 +1,20 @@
-export interface StyleOptions {
-    cor?: string
-    sombra?: string
-    fundo?: string
-    fonte?: string
-    peso?: string
-    espaco?: string
-    preenchimento?: string
-    formatacao?: string
-    alinhamento?: string
-    larguraMaxima?: string
-}
+export type StyledKey =
+    | 'cor'
+    | 'sombra'
+    | 'fundo'
+    | 'fundoTamanho'
+    | 'fonte'
+    | 'peso'
+    | 'espaco'
+    | 'preenchimento'
+    | 'formatacao'
+    | 'alinhamento'
+    | 'larguraMaxima'
+    | 'altura'
+    | 'borda'
+    | 'bordaInferior'
+
+export type StyleOptions = Partial<Record<StyledKey, string>>
 
 export const buildStyle = (options: StyleOptions): string => {
     const color = options.cor
@@ -20,8 +25,12 @@ export const buildStyle = (options: StyleOptions): string => {
         ? `text-shadow: ${options.sombra};`
         : ''
 
-    const backgroundColor = options.fundo
-        ? `background-color: ${options.fundo};`
+    const background = options.fundo
+        ? `background: ${options.fundo};`
+        : ''
+
+    const backgroudSize = options.fundoTamanho
+        ? `background-size: ${options.fundoTamanho};`
         : ''
 
     const font = options.fonte
@@ -52,10 +61,23 @@ export const buildStyle = (options: StyleOptions): string => {
         ? `max-width: ${options.larguraMaxima};`
         : ''
 
+    const height = options.altura
+        ? `height: ${options.altura};`
+        : ''
+
+    const border = options.borda
+        ? `border: ${options.borda};`
+        : ''
+
+    const borderBottom = options.bordaInferior
+        ? `border: ${options.bordaInferior};`
+        : ''
+
     return [
         color,
         textShadow,
-        backgroundColor,
+        background,
+        backgroudSize,
         font,
         fontWeight,
         margin,
@@ -63,22 +85,13 @@ export const buildStyle = (options: StyleOptions): string => {
         whiteSpace,
         textAlign,
         maxWidth,
+        height,
+        border,
+        borderBottom,
     ].join('')
 }
 
-export interface WithStyleOptions<K extends string> {
-    cor?: Record<K, string>
-    sombra?: Record<K, string>
-    fundo?: Record<K, string>
-    fonte?: Record<K, string>
-    peso?: Record<K, string>
-    espaco?: Record<K, string>
-    preenchimento?: Record<K, string>
-    formatacao?: Record<K, string>
-    alinhamento?: Record<K, string>
-    larguraMaxima?: Record<K, string>
-}
-
+export type WithStyleOptions<K extends string> = Partial<Record<StyledKey, Record<K, string>>>
 export type Styles<K extends string> = Record<K, string | undefined>
 export type WithStyle<K extends string, T extends WithStyleOptions<K>> = T & {
     styles: Styles<K>
@@ -90,6 +103,7 @@ export const buildWithStyle =
             ...(options.cor ?? {}),
             ...(options.sombra ?? {}),
             ...(options.fundo ?? {}),
+            ...(options.fundoTamanho ?? {}),
             ...(options.fonte ?? {}),
             ...(options.peso ?? {}),
             ...(options.espaco ?? {}),
@@ -97,6 +111,9 @@ export const buildWithStyle =
             ...(options.formatacao ?? {}),
             ...(options.alinhamento ?? {}),
             ...(options.larguraMaxima ?? {}),
+            ...(options.altura ?? {}),
+            ...(options.borda ?? {}),
+            ...(options.bordaInferior ?? {}),
         }) as K[]
 
         return {
@@ -106,6 +123,7 @@ export const buildWithStyle =
                     cor: options.cor?.[name],
                     sombra: options.sombra?.[name],
                     fundo: options.fundo?.[name],
+                    fundoTamanho: options.fundoTamanho?.[name],
                     fonte: options.fonte?.[name],
                     peso: options.peso?.[name],
                     espaco: options.espaco?.[name],
@@ -113,6 +131,9 @@ export const buildWithStyle =
                     formatacao: options.formatacao?.[name],
                     alinhamento: options.alinhamento?.[name],
                     larguraMaxima: options.larguraMaxima?.[name],
+                    altura: options.altura?.[name],
+                    borda: options.borda?.[name],
+                    bordaInferior: options.bordaInferior?.[name],
                 })
                 return styles
             }, {} as Styles<K>)

@@ -1,5 +1,5 @@
-import z, { ZodObject, ZodOptional, ZodString, ZodTypeAny } from 'zod'
-import {buildWithStyle} from '../builder/style-builder'
+import z, { ZodOptional, ZodString } from 'zod'
+import {buildWithStyle, StyledKey} from '../builder/style-builder'
 
 export const ContentSchema = z.object({
     inicio: z.object({
@@ -15,11 +15,15 @@ export const ContentSchema = z.object({
             peso: ['mensagem', 'botao'],
             sombra: ['mensagem', 'botao'],
             preenchimento: ['logo', 'mensagem', 'botao'],
-            espaco: ['logo', 'mensagem'],
-            fundo: ['botao'],
+            espaco: ['logo', 'mensagem', 'divisor'],
+            fundo: ['botao', 'pagina', 'divisor'],
+            fundoTamanho: ['botao', 'pagina', 'divisor'],
             formatacao: ['mensagem'],
             alinhamento: ['mensagem'],
             larguraMaxima: ['mensagem'],
+            altura: ['divisor'],
+            borda: ['pagina'],
+            bordaInferior: ['pagina'],
         }),
     }),
     sobre: z.object({
@@ -34,11 +38,15 @@ export const ContentSchema = z.object({
             peso: ['titulo', 'descricao'],
             sombra: ['titulo', 'descricao'],
             preenchimento: ['titulo', 'descricao'],
-            espaco: ['titulo', 'descricao'],
-            fundo: ['titulo', 'descricao'],
+            espaco: ['titulo', 'descricao', 'divisor'],
+            fundo: ['titulo', 'descricao', 'pagina', 'divisor'],
+            fundoTamanho: ['titulo', 'descricao', 'pagina', 'divisor'],
             formatacao: ['titulo', 'descricao'],
             alinhamento: ['titulo', 'descricao'],
             larguraMaxima: ['titulo', 'descricao'],
+            altura: ['divisor'],
+            borda: ['pagina'],
+            bordaInferior: ['pagina'],
         }),
     }),
     equipe: z.object({
@@ -63,11 +71,15 @@ export const ContentSchema = z.object({
             preenchimento: ['titulo', 'nome', 'formacao', 'descricao', 'crp', 'botao',
                 'primeiro_profissional', 'ultimo_profissional', 'profissional',
                 'profissionais'],
-            espaco: ['titulo', 'nome', 'formacao', 'descricao', 'crp', 'profissionais'],
-            fundo: ['botao'],
+            espaco: ['titulo', 'nome', 'formacao', 'descricao', 'crp', 'profissionais', 'divisor'],
+            fundo: ['botao', 'pagina', 'divisor'],
+            fundoTamanho: ['botao', 'pagina', 'divisor'],
             formatacao: ['titulo', 'nome', 'formacao', 'descricao', 'crp'],
             alinhamento: ['titulo', 'nome', 'formacao', 'descricao', 'crp'],
             larguraMaxima: ['titulo', 'nome', 'formacao', 'descricao', 'crp'],
+            altura: ['divisor'],
+            borda: ['pagina'],
+            bordaInferior: ['pagina'],
         }),
     }),
     rodape: z.object({
@@ -83,11 +95,15 @@ export const ContentSchema = z.object({
                 peso: ['titulo', 'subtitulo'],
                 sombra: ['titulo', 'subtitulo'],
                 preenchimento: ['titulo', 'subtitulo'],
-                espaco: ['titulo', 'subtitulo'],
-                fundo: ['titulo', 'subtitulo'],
+                espaco: ['titulo', 'subtitulo', 'divisor'],
+                fundo: ['titulo', 'subtitulo', 'pagina'],
+                fundoTamanho: ['titulo', 'subtitulo', 'pagina'],
                 formatacao: ['titulo', 'subtitulo'],
                 alinhamento: ['titulo', 'subtitulo'],
                 larguraMaxima: ['titulo', 'subtitulo'],
+                altura: ['divisor'],
+                borda: ['pagina'],
+                bordaInferior: ['pagina'],
             }),
         }),
         direita: z.object({
@@ -102,11 +118,15 @@ export const ContentSchema = z.object({
                 peso: ['titulo', 'descricao'],
                 sombra: ['titulo', 'descricao'],
                 preenchimento: ['titulo', 'descricao'],
-                espaco: ['titulo', 'descricao'],
-                fundo: ['titulo', 'descricao'],
+                espaco: ['titulo', 'descricao', 'divisor'],
+                fundo: ['titulo', 'descricao', 'pagina'],
+                fundoTamanho: ['titulo', 'descricao', 'pagina'],
                 formatacao: ['titulo', 'descricao'],
                 alinhamento: ['titulo', 'descricao'],
                 larguraMaxima: ['titulo', 'descricao'],
+                altura: ['divisor'],
+                borda: ['pagina'],
+                bordaInferior: ['pagina'],
             }),
         }),
     }),
@@ -117,37 +137,27 @@ export const ContentModel = ContentSchema
     .transform(content => ({
         ...content,
         inicio: buildWithStyle(content.inicio,
-            ['mensagem', 'botao']),
+            ['logo', 'mensagem', 'botao', 'pagina', 'divisor']),
         sobre: buildWithStyle(content.sobre,
-            ['titulo', 'descricao']),
+            ['titulo', 'descricao', 'pagina', 'divisor']),
         equipe: buildWithStyle(content.equipe,
-            ['titulo', 'subtitulo', 'descricao', 'informacao', 'botao']),
+            ['titulo', 'subtitulo', 'descricao', 'informacao', 'botao', 'pagina', 'divisor']),
         rodape: {
             esquerda: buildWithStyle(content.rodape.esquerda,
-                ['titulo', 'subtitulo']),
+                ['titulo', 'subtitulo', 'pagina']),
             direita: buildWithStyle(content.rodape.direita,
-                ['titulo', 'descricao'])
+                ['titulo', 'descricao', 'pagina'])
         }
     }))
 
 export type Content = z.infer<typeof ContentModel>
 
-type StyledKey =
-    | 'cor'
-    | 'sombra'
-    | 'fundo'
-    | 'fonte'
-    | 'peso'
-    | 'espaco'
-    | 'preenchimento'
-    | 'formatacao'
-    | 'alinhamento'
-    | 'larguraMaxima'
 function buildStyledProps<P extends string>(styled: Record<StyledKey, P[]>) {
     const result = {
         cor: z.object({} as Record<P, ZodOptional<ZodString>>).optional(),
         sombra: z.object({} as Record<P, ZodOptional<ZodString>>).optional(),
         fundo: z.object({} as Record<P, ZodOptional<ZodString>>).optional(),
+        fundoTamanho: z.object({} as Record<P, ZodOptional<ZodString>>).optional(),
         fonte: z.object({} as Record<P, ZodOptional<ZodString>>).optional(),
         peso: z.object({} as Record<P, ZodOptional<ZodString>>).optional(),
         espaco: z.object({} as Record<P, ZodOptional<ZodString>>).optional(),
@@ -155,6 +165,9 @@ function buildStyledProps<P extends string>(styled: Record<StyledKey, P[]>) {
         formatacao: z.object({} as Record<P, ZodOptional<ZodString>>).optional(),
         alinhamento: z.object({} as Record<P, ZodOptional<ZodString>>).optional(),
         larguraMaxima: z.object({} as Record<P, ZodOptional<ZodString>>).optional(),
+        altura: z.object({} as Record<P, ZodOptional<ZodString>>).optional(),
+        borda: z.object({} as Record<P, ZodOptional<ZodString>>).optional(),
+        bordaInferior: z.object({} as Record<P, ZodOptional<ZodString>>).optional(),
     }
 
     const styledKeys = Object.keys(styled) as StyledKey[]

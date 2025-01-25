@@ -1,4 +1,4 @@
-<div id="about">
+<div id="about" style="<%= styles.pagina ?? '' %>">
   <div class="header">
     <h2 class="title" style="<%= styles.titulo ?? '' %>">
       <%= titulo %>
@@ -7,4 +7,5 @@
   <div class="content">
     <p class="description" style="<%= styles.descricao ?? '' %>"><%= descricao %></p>
   </div>
+  <%- include('./components/divider.ejs', {styles: styles.divisor}) %>
 </div>

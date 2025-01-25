@@ -1,4 +1,4 @@
-<div id="team">
+<div id="team" style="<%= styles.pagina ?? '' %>">
   <div class="header">
     <h2 class="title" style="<%= styles.titulo %>">
       <%= titulo %>
@@ -38,4 +38,5 @@
       </div>
     <% } %>
   </div>
+  <%- include('./components/divider.ejs', {styles: styles.divisor}) %>
 </div>

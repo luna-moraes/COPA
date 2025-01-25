@@ -1,16 +1,16 @@
 <div id="rodape">
-  <div class="left">
-    <h2 class="title" style="<%= esquerda.styles.titulo%>">
+  <div class="left" style="<%= esquerda.styles.pagina ?? '' %>">
+    <h2 class="title" style="<%= esquerda.styles.titulo ?? ''%>">
       <%= esquerda.titulo %>
     </h3>
-    <p class="subtitle" style="<%= esquerda.styles.subtitulo%>">
+    <p class="subtitle" style="<%= esquerda.styles.subtitulo ?? ''%>">
       <%= esquerda.subtitulo %>
     </p>
   </div>
-  <div class="right">
-    <h2 class="title" style="<%= direita.styles.titulo%>">
+  <div class="right" style="<%= direita.styles.pagina ?? '' %>">
+    <h2 class="title" style="<%= direita.styles.titulo ?? '' %>">
       <%= direita.titulo %>
     </h3>
-    <p class="description" style="<%= direita.styles.descricao%>"><%= direita.descricao %></p>
+    <p class="description" style="<%= direita.styles.descricao ?? '' %>"><%= direita.descricao %></p>
   </div>
 </div>

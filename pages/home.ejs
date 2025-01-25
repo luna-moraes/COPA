@@ -1,4 +1,4 @@
-<div id="home">
+<div id="home" style="<%= styles.pagina ?? '' %>">
   <div class="content">
     <img class="logo" src="/img/<%= logo %>" style="<%= styles.logo ?? '' %>; width: 14cm;">
 
@@ -8,4 +8,5 @@
       <%= botao %>
     </a>
   </div>
+  <%- include('./components/divider.ejs', {styles: styles.divisor}) %>
 </div>
