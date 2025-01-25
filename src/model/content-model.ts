@@ -4,23 +4,22 @@ import {buildWithStyle} from '../builder/style-builder'
 export const ContentSchema = z.object({
     inicio: z.object({
         // Conteúdo do início
-        titulo: z.string(),
-        subtitulo: z.string(),
+        logo: z.string(),
         mensagem: z.string(),
         botao: z.string(),
 
         // Estilo do Início
         ...buildStyledProps({
-            cor: ['titulo', 'subtitulo', 'mensagem', 'botao'],
-            fonte: ['titulo', 'subtitulo', 'mensagem', 'botao'],
-            peso: ['titulo', 'subtitulo', 'mensagem', 'botao'],
-            sombra: ['titulo', 'subtitulo', 'mensagem', 'botao'],
-            preenchimento: ['titulo', 'subtitulo', 'mensagem', 'botao'],
-            espaco: ['titulo', 'subtitulo', 'mensagem'],
+            cor: ['mensagem', 'botao'],
+            fonte: ['mensagem', 'botao'],
+            peso: ['mensagem', 'botao'],
+            sombra: ['mensagem', 'botao'],
+            preenchimento: ['logo', 'mensagem', 'botao'],
+            espaco: ['logo', 'mensagem'],
             fundo: ['botao'],
-            formatacao: ['titulo', 'subtitulo', 'mensagem'],
-            alinhamento: ['titulo', 'subtitulo', 'mensagem'],
-            larguraMaxima: ['titulo', 'subtitulo', 'mensagem'],
+            formatacao: ['mensagem'],
+            alinhamento: ['mensagem'],
+            larguraMaxima: ['mensagem'],
         }),
     }),
     sobre: z.object({
@@ -118,7 +117,7 @@ export const ContentModel = ContentSchema
     .transform(content => ({
         ...content,
         inicio: buildWithStyle(content.inicio,
-            ['titulo', 'subtitulo', 'mensagem', 'botao']),
+            ['mensagem', 'botao']),
         sobre: buildWithStyle(content.sobre,
             ['titulo', 'descricao']),
         equipe: buildWithStyle(content.equipe,

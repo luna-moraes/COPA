@@ -9,14 +9,17 @@ const style_builder_1 = require("../builder/style-builder");
 exports.ContentSchema = zod_1.default.object({
     inicio: zod_1.default.object(Object.assign({ 
         // Conteúdo do início
-        titulo: zod_1.default.string(), subtitulo: zod_1.default.string(), mensagem: zod_1.default.string(), botao: zod_1.default.string() }, buildStyledProps({
-        cor: ['titulo', 'subtitulo', 'mensagem', 'botao'],
-        fonte: ['titulo', 'subtitulo', 'mensagem', 'botao'],
-        peso: ['titulo', 'subtitulo', 'mensagem', 'botao'],
-        sombra: ['titulo', 'subtitulo', 'mensagem', 'botao'],
-        preenchimento: ['titulo', 'subtitulo', 'mensagem', 'botao'],
-        espaco: ['titulo', 'subtitulo', 'mensagem'],
+        logo: zod_1.default.string(), mensagem: zod_1.default.string(), botao: zod_1.default.string() }, buildStyledProps({
+        cor: ['mensagem', 'botao'],
+        fonte: ['mensagem', 'botao'],
+        peso: ['mensagem', 'botao'],
+        sombra: ['mensagem', 'botao'],
+        preenchimento: ['logo', 'mensagem', 'botao'],
+        espaco: ['logo', 'mensagem'],
         fundo: ['botao'],
+        formatacao: ['mensagem'],
+        alinhamento: ['mensagem'],
+        larguraMaxima: ['mensagem'],
     }))),
     sobre: zod_1.default.object(Object.assign({ 
         // Conteúdo do Sobre Nosso Trabalho
@@ -28,6 +31,9 @@ exports.ContentSchema = zod_1.default.object({
         preenchimento: ['titulo', 'descricao'],
         espaco: ['titulo', 'descricao'],
         fundo: ['titulo', 'descricao'],
+        formatacao: ['titulo', 'descricao'],
+        alinhamento: ['titulo', 'descricao'],
+        larguraMaxima: ['titulo', 'descricao'],
     }))),
     equipe: zod_1.default.object(Object.assign({ 
         // Conteúdo da Equipe
@@ -49,6 +55,9 @@ exports.ContentSchema = zod_1.default.object({
             'profissionais'],
         espaco: ['titulo', 'nome', 'formacao', 'descricao', 'crp', 'profissionais'],
         fundo: ['botao'],
+        formatacao: ['titulo', 'nome', 'formacao', 'descricao', 'crp'],
+        alinhamento: ['titulo', 'nome', 'formacao', 'descricao', 'crp'],
+        larguraMaxima: ['titulo', 'nome', 'formacao', 'descricao', 'crp'],
     }))),
     rodape: zod_1.default.object({
         esquerda: zod_1.default.object(Object.assign({ 
@@ -61,6 +70,9 @@ exports.ContentSchema = zod_1.default.object({
             preenchimento: ['titulo', 'subtitulo'],
             espaco: ['titulo', 'subtitulo'],
             fundo: ['titulo', 'subtitulo'],
+            formatacao: ['titulo', 'subtitulo'],
+            alinhamento: ['titulo', 'subtitulo'],
+            larguraMaxima: ['titulo', 'subtitulo'],
         }))),
         direita: zod_1.default.object(Object.assign({ 
             // Conteúdo Direito do Rodapé
@@ -72,12 +84,15 @@ exports.ContentSchema = zod_1.default.object({
             preenchimento: ['titulo', 'descricao'],
             espaco: ['titulo', 'descricao'],
             fundo: ['titulo', 'descricao'],
+            formatacao: ['titulo', 'descricao'],
+            alinhamento: ['titulo', 'descricao'],
+            larguraMaxima: ['titulo', 'descricao'],
         }))),
     }),
 });
 exports.ContentModel = exports.ContentSchema
     .extend({})
-    .transform(content => (Object.assign(Object.assign({}, content), { inicio: (0, style_builder_1.buildWithStyle)(content.inicio, ['titulo', 'subtitulo', 'mensagem', 'botao']), sobre: (0, style_builder_1.buildWithStyle)(content.sobre, ['titulo', 'descricao']), equipe: (0, style_builder_1.buildWithStyle)(content.equipe, ['titulo', 'subtitulo', 'descricao', 'informacao', 'botao']), rodape: {
+    .transform(content => (Object.assign(Object.assign({}, content), { inicio: (0, style_builder_1.buildWithStyle)(content.inicio, ['mensagem', 'botao']), sobre: (0, style_builder_1.buildWithStyle)(content.sobre, ['titulo', 'descricao']), equipe: (0, style_builder_1.buildWithStyle)(content.equipe, ['titulo', 'subtitulo', 'descricao', 'informacao', 'botao']), rodape: {
         esquerda: (0, style_builder_1.buildWithStyle)(content.rodape.esquerda, ['titulo', 'subtitulo']),
         direita: (0, style_builder_1.buildWithStyle)(content.rodape.direita, ['titulo', 'descricao'])
     } })));
@@ -90,6 +105,9 @@ function buildStyledProps(styled) {
         peso: zod_1.default.object({}).optional(),
         espaco: zod_1.default.object({}).optional(),
         preenchimento: zod_1.default.object({}).optional(),
+        formatacao: zod_1.default.object({}).optional(),
+        alinhamento: zod_1.default.object({}).optional(),
+        larguraMaxima: zod_1.default.object({}).optional(),
     };
     const styledKeys = Object.keys(styled);
     for (const styledKey of styledKeys) {

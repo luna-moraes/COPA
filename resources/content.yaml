@@ -1,7 +1,6 @@
 inicio:
     # Conteúdo do Início
-    titulo: COPA
-    subtitulo: Espaço de psicologia e psicanálise
+    logo: 12.png
     mensagem: |-
         Somos um espaço online de profissionais que ofertam escuta especializada, 
         acolhedora, responsável e ética, apostando na singularidade de cada sujeito 
@@ -10,19 +9,16 @@ inicio:
 
     # Estilo do Início
     cor: 
-        titulo: black
-        subtitulo: black
         mensagem: black
         botao: white
     fundo: 
         botao: "#9B1F16"
     fonte: 
-        titulo: 2.5rem
         subtitulo: 1rem
     preenchimento:
         botao: 1rem 1.5rem
     espaco:
-        titulo: 0 0 3rem 0
+        logo: 0 0 3rem 0
         subtitulo: 0 0 1.4rem 0
         mensagem: 0 0 7rem 0
 sobre:
@@ -40,13 +36,12 @@ sobre:
         Copa nasce de um compromisso atravessado pela psicanálise, que se
         orienta num tratamento pela via do desejo, denúncia do inconsciente
         no sujeito. Propomos, a quem estiver disposto, a oferta de um local
-        de escuta daquilo que é mais singular; a existência, com seus 
+        de escuta daquilo que é mais singular: a existência, com seus 
         sofrimentos e prazeres. Quem fala, também ouve. Ouve e sente no 
         corpo ecos pulsantes que outorgam direitos ao que lhes é alheio, 
         estranho, dolor. Ouvir é um trabalho a dois, movido pelo desejo 
         de saber, que põe em circulação as forças da vida, vertendo
         "clamores antigos" em escrita própria. 
-
 
     # Estilo do Sobre Nosso Trabalho
     cor:
