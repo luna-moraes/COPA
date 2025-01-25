@@ -9,6 +9,7 @@ export type StyledKey =
     | 'preenchimento'
     | 'formatacao'
     | 'alinhamento'
+    | 'largura'
     | 'larguraMaxima'
     | 'altura'
     | 'borda'
@@ -57,6 +58,10 @@ export const buildStyle = (options: StyleOptions): string => {
         ? `text-align: ${options.alinhamento};`
         : ''
 
+    const width = options.largura
+        ? `width: ${options.largura};`
+        : ''
+
     const maxWidth = options.larguraMaxima
         ? `max-width: ${options.larguraMaxima};`
         : ''
@@ -84,6 +89,7 @@ export const buildStyle = (options: StyleOptions): string => {
         padding,
         whiteSpace,
         textAlign,
+        width,
         maxWidth,
         height,
         border,
@@ -110,6 +116,7 @@ export const buildWithStyle =
             ...(options.preenchimento ?? {}),
             ...(options.formatacao ?? {}),
             ...(options.alinhamento ?? {}),
+            ...(options.largura ?? {}),
             ...(options.larguraMaxima ?? {}),
             ...(options.altura ?? {}),
             ...(options.borda ?? {}),
@@ -130,6 +137,7 @@ export const buildWithStyle =
                     preenchimento: options.preenchimento?.[name],
                     formatacao: options.formatacao?.[name],
                     alinhamento: options.alinhamento?.[name],
+                    largura: options.largura?.[name],
                     larguraMaxima: options.larguraMaxima?.[name],
                     altura: options.altura?.[name],
                     borda: options.borda?.[name],
