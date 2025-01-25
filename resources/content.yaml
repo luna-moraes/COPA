@@ -1,45 +1,52 @@
 inicio:
     # Conteúdo do Início
-    titulo: Semente
+    titulo: COPA
     subtitulo: Espaço de psicologia e psicanálise
     mensagem: |-
-        Somos um espaço online que oferta escuta especializada por
-        profissionais em constante formação e atentos à uma ética de trabalho
-        própria de nosso fazer.
+        Somos um espaço online de profissionais que ofertam escuta especializada, 
+        acolhedora, responsável e ética, apostando na singularidade de cada sujeito 
+        e suas diferentes formas de viver, estar e existir no mundo.
     botao: Entre em contato
 
     # Estilo do Início
-    cor:
+    cor: 
         titulo: black
         subtitulo: black
         mensagem: black
         botao: white
-    fundo:
-        botao: orange
-    fonte:
+    fundo: 
+        botao: "#9B1F16"
+    fonte: 
         titulo: 2.5rem
         subtitulo: 1rem
     preenchimento:
         botao: 1rem 1.5rem
     espaco:
-        titulo: 0 0 .8rem 0
+        titulo: 0 0 3rem 0
         subtitulo: 0 0 1.4rem 0
-        mensagem: 0 0 3rem 0
+        mensagem: 0 0 7rem 0
 sobre:
     # Conteúdo do Sobre Nosso Trabalho
     titulo: Um pouco sobre nosso trabalho
     descricao: |-
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Nullam consectetur auctor molestie. Sed ac dolor elementum
-        sem consequat ultricies. Nulla at justo urna. In vehicula
-        est eget justo egestas congue. Morbi luctus euismod sapien,
-        eu congue lectus congue gravida. Lorem ipsum dolor sit amet,
-        consectetur adipiscing elit. Phasellus nisl quam, convallis
-        eu purus vitae, elementum ultrices erat. Mauris at quam
-        fringilla, tincidunt orci quis, volutpat est. Nulla tellus
-        lacus, iaculis quis metus non, porta ornare ligula. Curabitur
-        porttitor eros ornare, tempus urna et, commodo lectus. Morbi
-        convallis lacinia enim ac dictum.
+        "... havia lido em algum lugar que as palavras eram conchas de clamores
+        antigos. Eu queria ir atrás dos clamores antigos que estariam guardados
+        dentro das palavras."
+        _Trecho de “Escova”, de Manoel de Barros.
+
+        Quem escuta está atento aos mistérios contidos no dizer. Essa tarefa
+        é um ofício dos que buscam ouvir o que na história de cada um remonta
+        às causas de seu existir, que é particular, único, próprio. O espaço
+        Copa nasce de um compromisso atravessado pela psicanálise, que se
+        orienta num tratamento pela via do desejo, denúncia do inconsciente
+        no sujeito. Propomos, a quem estiver disposto, a oferta de um local
+        de escuta daquilo que é mais singular; a existência, com seus 
+        sofrimentos e prazeres. Quem fala, também ouve. Ouve e sente no 
+        corpo ecos pulsantes que outorgam direitos ao que lhes é alheio, 
+        estranho, dolor. Ouvir é um trabalho a dois, movido pelo desejo 
+        de saber, que põe em circulação as forças da vida, vertendo
+        "clamores antigos" em escrita própria. 
+
 
     # Estilo do Sobre Nosso Trabalho
     cor:
@@ -58,26 +65,26 @@ equipe:
     # Conteúdo da Equipe
     titulo: Nossa Equipe
     profissionais:
-        - foto: foto_perfil.png
+        - foto: luna.jpeg
           nome: Luna Moraes de Almeida
           formacao: PSICÓLOGA E PSICANALISTA
           descricao: caixa de texto
-          crp: 11/21449
-          contato: "5588991112222"
+          crp: CRP 11/21449
+          contato: "5588988194892"
           botao: "Entre em Contato"
-        - foto: foto_perfil.png
+        - foto: debora.jpeg
           nome: Débora Teresa dos Santos Meneses
           formacao: PSICÓLOGA E PSICANALISTA
           descricao: caixa de texto
-          crp: 17/7450
-          contato: "5588991112222"
+          crp: CRP 17/7450
+          contato: "5584998352979"
           botao: "Entre em Contato"
-        - foto: foto_perfil.png
+        - foto: julio.jpeg
           nome: Júlio César Oliveira Filho
           formacao: PSICÓLOGO E PSICANALISTA
           descricao: caixa de texto
-          crp: 11/19441
-          contato: "5588991112222"
+          crp: CRP 11/19441
+          contato: "5588996300245"
           botao: "Entre em Contato"
 
     # Estilo da Equipe
@@ -89,7 +96,7 @@ equipe:
         crp: black
         botao: white
     fundo:
-        botao: orange
+        botao: "#9B1F16"
     fonte:
         titulo: 1.5rem
         nome: 1.1rem
@@ -110,7 +117,7 @@ rodape:
     # Lado Esquerdo do Rodapé
     esquerda:
         # Conteúdo Esquerdo do Rodapé
-        titulo: Semente
+        titulo: COPA
         subtitulo: Espaço de psicologia e psicanálise
 
         # Estilo Esquerdo do Rodapé
