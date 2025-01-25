@@ -18,6 +18,9 @@ export const ContentSchema = z.object({
             preenchimento: ['titulo', 'subtitulo', 'mensagem', 'botao'],
             espaco: ['titulo', 'subtitulo', 'mensagem'],
             fundo: ['botao'],
+            formatacao: ['titulo', 'subtitulo', 'mensagem'],
+            alinhamento: ['titulo', 'subtitulo', 'mensagem'],
+            larguraMaxima: ['titulo', 'subtitulo', 'mensagem'],
         }),
     }),
     sobre: z.object({
@@ -34,6 +37,9 @@ export const ContentSchema = z.object({
             preenchimento: ['titulo', 'descricao'],
             espaco: ['titulo', 'descricao'],
             fundo: ['titulo', 'descricao'],
+            formatacao: ['titulo', 'descricao'],
+            alinhamento: ['titulo', 'descricao'],
+            larguraMaxima: ['titulo', 'descricao'],
         }),
     }),
     equipe: z.object({
@@ -60,6 +66,9 @@ export const ContentSchema = z.object({
                 'profissionais'],
             espaco: ['titulo', 'nome', 'formacao', 'descricao', 'crp', 'profissionais'],
             fundo: ['botao'],
+            formatacao: ['titulo', 'nome', 'formacao', 'descricao', 'crp'],
+            alinhamento: ['titulo', 'nome', 'formacao', 'descricao', 'crp'],
+            larguraMaxima: ['titulo', 'nome', 'formacao', 'descricao', 'crp'],
         }),
     }),
     rodape: z.object({
@@ -77,6 +86,9 @@ export const ContentSchema = z.object({
                 preenchimento: ['titulo', 'subtitulo'],
                 espaco: ['titulo', 'subtitulo'],
                 fundo: ['titulo', 'subtitulo'],
+                formatacao: ['titulo', 'subtitulo'],
+                alinhamento: ['titulo', 'subtitulo'],
+                larguraMaxima: ['titulo', 'subtitulo'],
             }),
         }),
         direita: z.object({
@@ -93,6 +105,9 @@ export const ContentSchema = z.object({
                 preenchimento: ['titulo', 'descricao'],
                 espaco: ['titulo', 'descricao'],
                 fundo: ['titulo', 'descricao'],
+                formatacao: ['titulo', 'descricao'],
+                alinhamento: ['titulo', 'descricao'],
+                larguraMaxima: ['titulo', 'descricao'],
             }),
         }),
     }),
@@ -118,7 +133,17 @@ export const ContentModel = ContentSchema
 
 export type Content = z.infer<typeof ContentModel>
 
-type StyledKey = 'cor' | 'sombra' | 'fundo' | 'fonte' | 'peso' | 'espaco' | 'preenchimento'
+type StyledKey =
+    | 'cor'
+    | 'sombra'
+    | 'fundo'
+    | 'fonte'
+    | 'peso'
+    | 'espaco'
+    | 'preenchimento'
+    | 'formatacao'
+    | 'alinhamento'
+    | 'larguraMaxima'
 function buildStyledProps<P extends string>(styled: Record<StyledKey, P[]>) {
     const result = {
         cor: z.object({} as Record<P, ZodOptional<ZodString>>).optional(),
@@ -128,6 +153,9 @@ function buildStyledProps<P extends string>(styled: Record<StyledKey, P[]>) {
         peso: z.object({} as Record<P, ZodOptional<ZodString>>).optional(),
         espaco: z.object({} as Record<P, ZodOptional<ZodString>>).optional(),
         preenchimento: z.object({} as Record<P, ZodOptional<ZodString>>).optional(),
+        formatacao: z.object({} as Record<P, ZodOptional<ZodString>>).optional(),
+        alinhamento: z.object({} as Record<P, ZodOptional<ZodString>>).optional(),
+        larguraMaxima: z.object({} as Record<P, ZodOptional<ZodString>>).optional(),
     }
 
     const styledKeys = Object.keys(styled) as StyledKey[]

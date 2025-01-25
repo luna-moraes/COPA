@@ -48,6 +48,12 @@ sobre:
     fonte:
         titulo: 1.5rem
         descricao: 1rem
+    formatacao:
+        descricao: normal
+    alinhamento:
+        descricao: justify
+    larguraMaxima:
+        descricao: 40rem
 equipe:
     # Conteúdo da Equipe
     titulo: Nossa Equipe

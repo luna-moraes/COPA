@@ -6,6 +6,9 @@ export interface StyleOptions {
     peso?: string
     espaco?: string
     preenchimento?: string
+    formatacao?: string
+    alinhamento?: string
+    larguraMaxima?: string
 }
 
 export const buildStyle = (options: StyleOptions): string => {
@@ -36,7 +39,19 @@ export const buildStyle = (options: StyleOptions): string => {
     const padding = options.preenchimento
         ? `padding: ${options.preenchimento};`
         : ''
-    
+
+    const whiteSpace = options.formatacao
+        ?  `white-space: ${options.formatacao};`
+        : ''
+
+    const textAlign = options.alinhamento
+        ? `text-align: ${options.alinhamento};`
+        : ''
+
+    const maxWidth = options.larguraMaxima
+        ? `max-width: ${options.larguraMaxima};`
+        : ''
+
     return [
         color,
         textShadow,
@@ -45,6 +60,9 @@ export const buildStyle = (options: StyleOptions): string => {
         fontWeight,
         margin,
         padding,
+        whiteSpace,
+        textAlign,
+        maxWidth,
     ].join('')
 }
 
@@ -56,6 +74,9 @@ export interface WithStyleOptions<K extends string> {
     peso?: Record<K, string>
     espaco?: Record<K, string>
     preenchimento?: Record<K, string>
+    formatacao?: Record<K, string>
+    alinhamento?: Record<K, string>
+    larguraMaxima?: Record<K, string>
 }
 
 export type Styles<K extends string> = Record<K, string | undefined>
@@ -73,6 +94,9 @@ export const buildWithStyle =
             ...(options.peso ?? {}),
             ...(options.espaco ?? {}),
             ...(options.preenchimento ?? {}),
+            ...(options.formatacao ?? {}),
+            ...(options.alinhamento ?? {}),
+            ...(options.larguraMaxima ?? {}),
         }) as K[]
 
         return {
@@ -86,6 +110,9 @@ export const buildWithStyle =
                     peso: options.peso?.[name],
                     espaco: options.espaco?.[name],
                     preenchimento: options.preenchimento?.[name],
+                    formatacao: options.formatacao?.[name],
+                    alinhamento: options.alinhamento?.[name],
+                    larguraMaxima: options.larguraMaxima?.[name],
                 })
                 return styles
             }, {} as Styles<K>)
