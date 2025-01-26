@@ -2,9 +2,10 @@ inicio:
     # Conteúdo do Início
     imagem: 12.png
     mensagem: |-
-        Somos um espaço online de profissionais que ofertam escuta especializada, 
-        acolhedora, responsável e ética, apostando na singularidade de cada sujeito 
-        e suas diferentes formas de viver, estar e existir no mundo.
+        Somos um espaço online que propõe a oferta de escuta especializada
+        promovida por profissionais éticos e comprometidos com a sensibilidade
+        que envolve os desígnios desse fazer.
+       
     botao: Entre em contato
 
     # Estilo do Início
@@ -13,8 +14,11 @@ inicio:
         botao: white
     fundo:
         botao: "#9B1F16"
+        pagina: url(/img/linho3.jpeg)
+
     fonte: 
         subtitulo: 1rem
+        mensagem: 1.2rem
     preenchimento:
         botao: 1rem 1.5rem
     espaco:
@@ -23,15 +27,19 @@ inicio:
         mensagem: 0 0 7rem 0
     largura:
         imagem: 14cm
+    peso:
+        mensagem: "500"
+    
+
 sobre:
     # Conteúdo do Sobre Nosso Trabalho
     titulo: Um pouco sobre nosso trabalho
-    descricao: |-
+    citacao: |-
         "... havia lido em algum lugar que as palavras eram conchas de clamores
         antigos. Eu queria ir atrás dos clamores antigos que estariam guardados
         dentro das palavras."
         _Trecho de “Escova”, de Manoel de Barros.
-
+    descricao: |-
         Quem escuta está atento aos mistérios contidos no dizer. Essa tarefa
         é um ofício dos que buscam ouvir o que na história de cada um remonta
         às causas de seu existir, que é particular, único, próprio. O espaço
@@ -47,17 +55,39 @@ sobre:
 
     # Estilo do Sobre Nosso Trabalho
     cor:
-        titulo: black
+        titulo: "#9B1F16"
         descricao: black
+        citacao: black
     fonte:
-        titulo: 1.5rem
-        descricao: 1rem
+        titulo: 2rem
+        descricao: 1.1rem
+        citacao: 1.1rem
+    espacamento: 
+        descricao: 1.8rem
+        citacao: 1.4rem
+    preenchimento:
+        descricao: 0 0 4rem 0
     formatacao:
         descricao: normal
+        citacao: normal
     alinhamento:
         descricao: justify
+        citacao: justify
     larguraMaxima:
         descricao: 40rem
+        citacao: 40rem
+    fundo:
+        pagina: "#FAF1D2"
+    opacidadeFundo: 
+        pagina: lighten
+    espaco: 
+        titulo: 7rem 0 0 0
+        citacao: 2rem 0 0 0
+        descricao: 3rem 0 0 0
+    peso:
+        descricao: "450" 
+        titulo: "500"
+        citacao: "450"
 equipe:
     # Conteúdo da Equipe
     titulo: Nossa Equipe
@@ -86,7 +116,7 @@ equipe:
 
     # Estilo da Equipe
     cor:
-        titulo: black
+        titulo: "#9B1F16"
         nome: black
         formacao: black
         descricao: black
@@ -94,8 +124,9 @@ equipe:
         botao: white
     fundo:
         botao: "#9B1F16"
+        pagina: "#FAF1D2"
     fonte:
-        titulo: 1.5rem
+        titulo: 2rem
         nome: 1.1rem
         formacao: 1.1rem
         descricao: 1.1rem
@@ -106,11 +137,17 @@ equipe:
     preenchimento:
         crp: 0 0 .5rem 0
         botao: .7rem 1.2rem
-        primeiro_profissional: 0 3.33rem 0 0
-        ultimo_profissional: 3rem 0 0 3.33rem
-        profissional: 3rem 1.66rem 0 1.66rem
-        profissionais: 0 0 2rem 0
+        primeiro_profissional: 0 6.66rem 0 0
+        profissional: 3rem 3.33rem 0 3.33rem
+        ultimo_profissional: 3rem 0 0 6.66rem
+        profissionais: 0 0 7rem 0
+    espaco:
+        titulo: 5rem 0 5rem 0
+    bordaInferior:
+        pagina: "1px solid #9B1F16"
 rodape:
+    fundo: 
+        pagina: url(/img/linho3.jpeg)
     # Lado Esquerdo do Rodapé
     esquerda:
         # Conteúdo Esquerdo do Rodapé
@@ -135,8 +172,8 @@ rodape:
         # Conteúdo Direito do Rodapé
         titulo: Contato
         descricao: |-
-            email@exemplo.com
-            (88) 95555-5555
+            espacocopacontato@gmail.com
+            (88) 99263-7312
 
         # Estilo Direito do Rodapé
         cor:
@@ -147,3 +184,5 @@ rodape:
             descricao: 1rem
         espaco:
             titulo: 80px 0 0 0
+        peso:
+            descricao: "500"

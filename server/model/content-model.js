@@ -25,25 +25,29 @@ exports.ContentSchema = zod_1.default.object({
         altura: ['divisor'],
         borda: ['imagem', 'mensagem', 'botao', 'pagina'],
         bordaInferior: ['imagem', 'mensagem', 'botao', 'pagina'],
+        espacamento: ['mensagem'],
+        opacidadeFundo: ['pagina'],
     }))),
     sobre: zod_1.default.object(Object.assign({ 
         // Conteúdo do Sobre Nosso Trabalho
-        titulo: zod_1.default.string().optional(), descricao: zod_1.default.string().optional() }, buildStyledProps({
-        cor: ['titulo', 'descricao'],
-        fonte: ['titulo', 'descricao'],
-        peso: ['titulo', 'descricao'],
-        sombra: ['titulo', 'descricao'],
-        preenchimento: ['titulo', 'descricao'],
-        espaco: ['titulo', 'descricao', 'divisor'],
-        fundo: ['titulo', 'descricao', 'pagina', 'divisor'],
-        fundoTamanho: ['titulo', 'descricao', 'pagina', 'divisor'],
-        formatacao: ['titulo', 'descricao'],
-        alinhamento: ['titulo', 'descricao'],
-        largura: ['titulo', 'descricao'],
-        larguraMaxima: ['titulo', 'descricao'],
-        altura: ['divisor'],
-        borda: ['titulo', 'descricao', 'pagina'],
-        bordaInferior: ['titulo', 'descricao', 'pagina'],
+        titulo: zod_1.default.string().optional(), descricao: zod_1.default.string().optional(), citacao: zod_1.default.string().optional() }, buildStyledProps({
+        cor: ['titulo', 'descricao', 'citacao'],
+        fonte: ['titulo', 'descricao', 'citacao'],
+        peso: ['titulo', 'descricao', 'citacao'],
+        sombra: ['titulo', 'descricao', 'citacao'],
+        preenchimento: ['titulo', 'descricao', 'citacao'],
+        espaco: ['titulo', 'descricao', 'divisor', 'citacao'],
+        fundo: ['titulo', 'descricao', 'pagina', 'divisor', 'citacao'],
+        fundoTamanho: ['titulo', 'descricao', 'pagina', 'divisor', 'citacao'],
+        formatacao: ['titulo', 'descricao', 'citacao'],
+        alinhamento: ['titulo', 'descricao', 'citacao'],
+        largura: ['titulo', 'descricao', 'citacao'],
+        larguraMaxima: ['titulo', 'descricao', 'citacao'],
+        altura: ['divisor', 'citacao'],
+        borda: ['titulo', 'descricao', 'pagina', 'citacao'],
+        bordaInferior: ['titulo', 'descricao', 'pagina', 'citacao'],
+        espacamento: ['descricao', 'citacao'],
+        opacidadeFundo: ['pagina'],
     }))),
     equipe: zod_1.default.object(Object.assign({ 
         // Conteúdo da Equipe
@@ -73,9 +77,28 @@ exports.ContentSchema = zod_1.default.object({
         altura: ['divisor'],
         borda: ['titulo', 'descricao', 'pagina'],
         bordaInferior: ['titulo', 'descricao', 'pagina'],
+        espacamento: ['descricao'],
+        opacidadeFundo: ['pagina'],
     }))),
-    rodape: zod_1.default.object({
-        esquerda: zod_1.default.object(Object.assign({ 
+    rodape: zod_1.default.object(Object.assign(Object.assign({}, buildStyledProps({
+        cor: ['pagina'],
+        fonte: ['pagina'],
+        peso: ['pagina'],
+        sombra: ['pagina'],
+        preenchimento: ['pagina'],
+        espaco: ['pagina'],
+        fundo: ['pagina'],
+        fundoTamanho: ['pagina'],
+        formatacao: ['pagina'],
+        alinhamento: ['pagina'],
+        largura: ['pagina'],
+        larguraMaxima: ['pagina'],
+        altura: ['pagina'],
+        borda: ['pagina'],
+        bordaInferior: ['pagina'],
+        espacamento: [],
+        opacidadeFundo: ['pagina'],
+    })), { esquerda: zod_1.default.object(Object.assign({ 
             // Conteúdo Esquerdo do Rodapé
             imagem: zod_1.default.string(), subtitulo: zod_1.default.string() }, buildStyledProps({
             cor: ['subtitulo'],
@@ -93,8 +116,9 @@ exports.ContentSchema = zod_1.default.object({
             altura: ['imagem', 'divisor'],
             borda: ['imagem', 'descricao', 'pagina'],
             bordaInferior: ['imagem', 'descricao', 'pagina'],
-        }))),
-        direita: zod_1.default.object(Object.assign({ 
+            espacamento: [],
+            opacidadeFundo: ['pagina'],
+        }))), direita: zod_1.default.object(Object.assign({ 
             // Conteúdo Direito do Rodapé
             titulo: zod_1.default.string(), descricao: zod_1.default.string().trim() }, buildStyledProps({
             cor: ['titulo', 'descricao'],
@@ -112,15 +136,13 @@ exports.ContentSchema = zod_1.default.object({
             altura: ['divisor'],
             borda: ['titulo', 'descricao', 'pagina'],
             bordaInferior: ['titulo', 'descricao', 'pagina'],
-        }))),
-    }),
+            espacamento: [],
+            opacidadeFundo: ['pagina'],
+        }))) })),
 });
 exports.ContentModel = exports.ContentSchema
     .extend({})
-    .transform(content => (Object.assign(Object.assign({}, content), { inicio: (0, style_builder_1.buildWithStyle)(content.inicio, ['imagem', 'mensagem', 'botao', 'pagina', 'divisor']), sobre: (0, style_builder_1.buildWithStyle)(content.sobre, ['titulo', 'descricao', 'pagina', 'divisor']), equipe: (0, style_builder_1.buildWithStyle)(content.equipe, ['titulo', 'subtitulo', 'descricao', 'informacao', 'botao', 'pagina', 'divisor']), rodape: {
-        esquerda: (0, style_builder_1.buildWithStyle)(content.rodape.esquerda, ['imagem', 'subtitulo', 'pagina']),
-        direita: (0, style_builder_1.buildWithStyle)(content.rodape.direita, ['titulo', 'descricao', 'pagina'])
-    } })));
+    .transform(content => (Object.assign(Object.assign({}, content), { inicio: (0, style_builder_1.buildWithStyle)(content.inicio, ['imagem', 'mensagem', 'botao', 'pagina', 'divisor']), sobre: (0, style_builder_1.buildWithStyle)(content.sobre, ['titulo', 'descricao', 'pagina', 'divisor']), equipe: (0, style_builder_1.buildWithStyle)(content.equipe, ['titulo', 'subtitulo', 'descricao', 'informacao', 'botao', 'pagina', 'divisor']), rodape: Object.assign(Object.assign({}, (0, style_builder_1.buildWithStyle)(content.rodape, ['pagina'])), { esquerda: (0, style_builder_1.buildWithStyle)(content.rodape.esquerda, ['imagem', 'subtitulo', 'pagina']), direita: (0, style_builder_1.buildWithStyle)(content.rodape.direita, ['titulo', 'descricao', 'pagina']) }) })));
 function buildStyledProps(styled) {
     const result = {
         cor: zod_1.default.object({}).optional(),
@@ -138,6 +160,8 @@ function buildStyledProps(styled) {
         altura: zod_1.default.object({}).optional(),
         borda: zod_1.default.object({}).optional(),
         bordaInferior: zod_1.default.object({}).optional(),
+        espacamento: zod_1.default.object({}).optional(),
+        opacidadeFundo: zod_1.default.object({}).optional(),
     };
     const styledKeys = Object.keys(styled);
     for (const styledKey of styledKeys) {

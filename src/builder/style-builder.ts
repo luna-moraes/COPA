@@ -14,6 +14,8 @@ export type StyledKey =
     | 'altura'
     | 'borda'
     | 'bordaInferior'
+    | 'espacamento'
+    | 'opacidadeFundo'
 
 export type StyleOptions = Partial<Record<StyledKey, string>>
 
@@ -75,7 +77,15 @@ export const buildStyle = (options: StyleOptions): string => {
         : ''
 
     const borderBottom = options.bordaInferior
-        ? `border: ${options.bordaInferior};`
+        ? `border-bottom: ${options.bordaInferior};`
+        : ''
+
+    const lineHeight = options.espacamento
+        ? `line-height: ${options.espacamento};`
+        : ''
+
+    const backgroudBlendMode = options.opacidadeFundo
+        ? `background-blend-mode: ${options.opacidadeFundo};`
         : ''
 
     return [
@@ -94,6 +104,8 @@ export const buildStyle = (options: StyleOptions): string => {
         height,
         border,
         borderBottom,
+        lineHeight,
+        backgroudBlendMode,
     ].join('')
 }
 
@@ -121,6 +133,8 @@ export const buildWithStyle =
             ...(options.altura ?? {}),
             ...(options.borda ?? {}),
             ...(options.bordaInferior ?? {}),
+            ...(options.espacamento ?? {}),
+            ...(options.opacidadeFundo ?? {}),
         }) as K[]
 
         return {
@@ -142,6 +156,8 @@ export const buildWithStyle =
                     altura: options.altura?.[name],
                     borda: options.borda?.[name],
                     bordaInferior: options.bordaInferior?.[name],
+                    espacamento: options.espacamento?.[name],
+                    opacidadeFundo: options.opacidadeFundo?.[name],
                 })
                 return styles
             }, {} as Styles<K>)

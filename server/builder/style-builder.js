@@ -45,7 +45,13 @@ const buildStyle = (options) => {
         ? `border: ${options.borda};`
         : '';
     const borderBottom = options.bordaInferior
-        ? `border: ${options.bordaInferior};`
+        ? `border-bottom: ${options.bordaInferior};`
+        : '';
+    const lineHeight = options.espacamento
+        ? `line-height: ${options.espacamento};`
+        : '';
+    const backgroudBlendMode = options.opacidadeFundo
+        ? `background-blend-mode: ${options.opacidadeFundo};`
         : '';
     return [
         color,
@@ -63,14 +69,16 @@ const buildStyle = (options) => {
         height,
         border,
         borderBottom,
+        lineHeight,
+        backgroudBlendMode,
     ].join('');
 };
 exports.buildStyle = buildStyle;
 const buildWithStyle = (options, _styles) => {
-    var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q;
-    const styleNames = Object.keys(Object.assign(Object.assign(Object.assign(Object.assign(Object.assign(Object.assign(Object.assign(Object.assign(Object.assign(Object.assign(Object.assign(Object.assign(Object.assign(Object.assign(Object.assign({}, ((_a = options.cor) !== null && _a !== void 0 ? _a : {})), ((_b = options.sombra) !== null && _b !== void 0 ? _b : {})), ((_c = options.fundo) !== null && _c !== void 0 ? _c : {})), ((_d = options.fundoTamanho) !== null && _d !== void 0 ? _d : {})), ((_e = options.fonte) !== null && _e !== void 0 ? _e : {})), ((_f = options.peso) !== null && _f !== void 0 ? _f : {})), ((_g = options.espaco) !== null && _g !== void 0 ? _g : {})), ((_h = options.preenchimento) !== null && _h !== void 0 ? _h : {})), ((_j = options.formatacao) !== null && _j !== void 0 ? _j : {})), ((_k = options.alinhamento) !== null && _k !== void 0 ? _k : {})), ((_l = options.largura) !== null && _l !== void 0 ? _l : {})), ((_m = options.larguraMaxima) !== null && _m !== void 0 ? _m : {})), ((_o = options.altura) !== null && _o !== void 0 ? _o : {})), ((_p = options.borda) !== null && _p !== void 0 ? _p : {})), ((_q = options.bordaInferior) !== null && _q !== void 0 ? _q : {})));
+    var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s;
+    const styleNames = Object.keys(Object.assign(Object.assign(Object.assign(Object.assign(Object.assign(Object.assign(Object.assign(Object.assign(Object.assign(Object.assign(Object.assign(Object.assign(Object.assign(Object.assign(Object.assign(Object.assign(Object.assign({}, ((_a = options.cor) !== null && _a !== void 0 ? _a : {})), ((_b = options.sombra) !== null && _b !== void 0 ? _b : {})), ((_c = options.fundo) !== null && _c !== void 0 ? _c : {})), ((_d = options.fundoTamanho) !== null && _d !== void 0 ? _d : {})), ((_e = options.fonte) !== null && _e !== void 0 ? _e : {})), ((_f = options.peso) !== null && _f !== void 0 ? _f : {})), ((_g = options.espaco) !== null && _g !== void 0 ? _g : {})), ((_h = options.preenchimento) !== null && _h !== void 0 ? _h : {})), ((_j = options.formatacao) !== null && _j !== void 0 ? _j : {})), ((_k = options.alinhamento) !== null && _k !== void 0 ? _k : {})), ((_l = options.largura) !== null && _l !== void 0 ? _l : {})), ((_m = options.larguraMaxima) !== null && _m !== void 0 ? _m : {})), ((_o = options.altura) !== null && _o !== void 0 ? _o : {})), ((_p = options.borda) !== null && _p !== void 0 ? _p : {})), ((_q = options.bordaInferior) !== null && _q !== void 0 ? _q : {})), ((_r = options.espacamento) !== null && _r !== void 0 ? _r : {})), ((_s = options.opacidadeFundo) !== null && _s !== void 0 ? _s : {})));
     return Object.assign(Object.assign({}, options), { styles: styleNames.reduce((styles, name) => {
-            var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q;
+            var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s;
             styles[name] = (0, exports.buildStyle)({
                 cor: (_a = options.cor) === null || _a === void 0 ? void 0 : _a[name],
                 sombra: (_b = options.sombra) === null || _b === void 0 ? void 0 : _b[name],
@@ -87,6 +95,8 @@ const buildWithStyle = (options, _styles) => {
                 altura: (_o = options.altura) === null || _o === void 0 ? void 0 : _o[name],
                 borda: (_p = options.borda) === null || _p === void 0 ? void 0 : _p[name],
                 bordaInferior: (_q = options.bordaInferior) === null || _q === void 0 ? void 0 : _q[name],
+                espacamento: (_r = options.espacamento) === null || _r === void 0 ? void 0 : _r[name],
+                opacidadeFundo: (_s = options.opacidadeFundo) === null || _s === void 0 ? void 0 : _s[name],
             });
             return styles;
         }, {}) });

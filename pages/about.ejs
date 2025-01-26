@@ -5,6 +5,7 @@
     </h2>
   </div>
   <div class="content">
+    <p class="citacao" style="<%= styles.citacao ?? '' %>"><%= citacao %></p>
     <p class="description" style="<%= styles.descricao ?? '' %>"><%= descricao %></p>
   </div>
   <%- include('./components/divider.ejs', {styles: styles.divisor}) %>
