@@ -12,7 +12,6 @@
     <script src="https://unpkg.com/htmx.org@2.0.2" integrity="sha384-Y7hw+L/jvKeWIRRkqWYfPcvVxHzVzn5REgzbawhxAuQGwX1XWe70vji+VSeHOThJ" crossorigin="anonymous"></script>
     <style>
       body {
-        background: url("/img/52.png") repeat;
         font-family: 'Montserrat', 'Playfair Display', Georgia, 'Times New Roman', serif;
       }
       body > * {
@@ -25,8 +24,8 @@
   </head>
   <body>
     <div hx-get="/home" hx-trigger="load" hx-swap="outerHTML"></div>
-    <div hx-get="/about" hx-trigger="load" hx-swap="outerHTML"></div>
     <div hx-get="/team" hx-trigger="load" hx-swap="outerHTML"></div>
+    <div hx-get="/about" hx-trigger="load" hx-swap="outerHTML"></div>
     <div hx-get="/footer" hx-trigger="load" hx-swap="outerHTML"></div>
   </body>
 </html>
