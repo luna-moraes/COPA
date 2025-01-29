@@ -2,11 +2,11 @@ inicio:
     # Conteúdo do Início
     imagem: 12.png
     mensagem: |-
-        Somos um espaço online que propõe a oferta de escuta especializada
-        promovida por profissionais éticos e comprometidos com a sensibilidade
-        que envolve os desígnios desse fazer.
+        Somos um espaço de psicoterapia online que oferta uma escuta ética promovida 
+        por profissionais comprometidos com a sensibilidade que envolve os desígnios 
+        desse fazer, apostando nas diferentes formas de ser e estar no mundo.
        
-    botao: Entre em contato
+    botao: ATENDIMENTO ONLINE
 
     # Estilo do Início
     cor: 
@@ -24,11 +24,12 @@ inicio:
     espaco:
         imagem: 0 0 3rem 0
         subtitulo: 0 0 1.4rem 0
-        mensagem: 0 0 7rem 0
+        mensagem: 0 0 5rem 0
     largura:
         imagem: 14cm
     peso:
-        mensagem: "500"
+        mensagem: "550"
+        botao: "550"
     
 
 sobre:
@@ -85,9 +86,9 @@ sobre:
         citacao: 2rem 0 0 0
         descricao: 3rem 0 0 0
     peso:
-        descricao: "450" 
-        titulo: "500"
-        citacao: "450"
+        descricao: "600" 
+        titulo: "600"
+        citacao: "600"
 equipe:
     # Conteúdo da Equipe
     titulo: Nossa Equipe
@@ -107,7 +108,7 @@ equipe:
           contato: "5584998352979"
           botao: "Entre em Contato"
         - foto: julio.jpeg
-          nome: Júlio César Oliveira Filho
+          nome: Júlio César Oliveira Chaves Filho
           formacao: PSICÓLOGO E PSICANALISTA
           descricao: caixa de texto
           crp: CRP 11/19441
@@ -142,7 +143,7 @@ equipe:
         ultimo_profissional: 3rem 0 0 6.66rem
         profissionais: 0 0 7rem 0
     espaco:
-        titulo: 5rem 0 5rem 0
+        titulo: 3rem 0 2rem 0
     bordaInferior:
         pagina: "1px solid #9B1F16"
 rodape:
@@ -173,7 +174,6 @@ rodape:
         titulo: Contato
         descricao: |-
             espacocopacontato@gmail.com
-            (88) 99263-7312
 
         # Estilo Direito do Rodapé
         cor:
