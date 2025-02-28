@@ -2,9 +2,7 @@ inicio:
     # Conteúdo do Início
     imagem: 12.png
     mensagem: |-
-        Somos um espaço de psicoterapia online que oferta uma escuta ética promovida 
-        por profissionais comprometidos com a sensibilidade que envolve os desígnios 
-        desse fazer, apostando nas diferentes formas de ser e estar no mundo.
+        Somos um espaço de psicoterapia online que oferta uma escuta ética promovida por profissionais comprometidos com a sensibilidade que envolve os desígnios desse fazer, apostando nas diferentes formas de ser e estar no mundo.
        
     botao: ATENDIMENTO ONLINE
 
@@ -18,7 +16,8 @@ inicio:
 
     fonte: 
         subtitulo: 1rem
-        mensagem: 1.2rem
+        mensagem: 1.5rem
+        botao: 1.2rem
     preenchimento:
         botao: 1rem 1.5rem
     espaco:
@@ -28,8 +27,8 @@ inicio:
     largura:
         imagem: 14cm
     peso:
-        mensagem: "550"
-        botao: "550"
+        mensagem: "580"
+        botao: "580"
     
 
 sobre:
@@ -174,6 +173,8 @@ rodape:
         titulo: Contato
         descricao: |-
             espacocopacontato@gmail.com
+        instagramLink: "https://www.instagram.com/espaco.copa?igsh=MW1jcXlzZXNudWFvMg=="
+        instagramImagem: instagram.png
 
         # Estilo Direito do Rodapé
         cor:
@@ -184,5 +185,9 @@ rodape:
             descricao: 1rem
         espaco:
             titulo: 80px 0 0 0
+            instagramImagem: 0 0 1rem 0
         peso:
             descricao: "500"
+        largura:
+            instagramImagem: 2rem
+        

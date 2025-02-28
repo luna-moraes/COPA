@@ -10,5 +10,15 @@
       <%= direita.titulo %>
     </h3>
     <p class="description" style="<%= direita.styles.descricao ?? '' %>"><%= direita.descricao %></p>
+    <% if (direita.instagramImagem && direita.instagramLink) { %>
+      <a target="_blank" class="link-icon" style="<%= direita.styles.instagramLink %>" href="<%= direita.instagramLink %>">
+        <img alt="instagram" class="icon-instagram" style="<%= direita.styles.instagramImagem %>" src="/img/<%= direita.instagramImagem ?? '' %>">
+      </a>
+    <% } %>
+    <% if (direita.whatsappImagem && direita.whatsappLink) { %>
+      <a target="_blank" class="link-icon" style="<%= direita.styles.whatsappLink %>" href="<%= direita.whatsappLink %>">
+        <img alt="whatsapp" class="icon-whatsapp" style="<%= direita.styles.whatsappImagem %>" src="/img/<%= direita.whatsappImagem ?? '' %>">
+      </a>
+    <% } %>
   </div>
 </div>
