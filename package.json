@@ -8,7 +8,7 @@
   "private": true,
   "scripts": {
     "start": "dotenvx run -f .env.prod -- node server/serve.js",
-    "build": "tsc && lessc assets/less/index.less dist/styles.css && dotenvx run -f .env.prod -- node server/web-builder.js",
+    "build": "tsc && lessc assets/less/index.less assets/styles.css && dotenvx run -f .env.prod -- node server/web-builder.js",
     "serve": "nodemon -e ts,yaml,ejs,less --exec \"lessc assets/less/index.less assets/styles.css && dotenvx run -f .env.dev -- ts-node src/serve.ts\"",
     "serve:nw": "lessc assets/less/index.less assets/styles.css && dotenvx run -f .env.dev -- ts-node src/serve.ts"
   },
