@@ -9,23 +9,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/htmx.org@2.0.2" integrity="sha384-Y7hw+L/jvKeWIRRkqWYfPcvVxHzVzn5REgzbawhxAuQGwX1XWe70vji+VSeHOThJ" crossorigin="anonymous"></script>
-    <style>
-      body {
-        font-family: 'Montserrat', 'Playfair Display', Georgia, 'Times New Roman', serif;
-      }
-      body > * {
-        padding: 0 5rem;
-      }
-      .bordered-button {
-        border-radius: 30px;
-      }
-    </style>
+    <link rel="stylesheet" href="/styles.css">
   </head>
   <body>
-    <div hx-get="/home" hx-trigger="load" hx-swap="outerHTML"></div>
-    <div hx-get="/team" hx-trigger="load" hx-swap="outerHTML"></div>
-    <div hx-get="/about" hx-trigger="load" hx-swap="outerHTML"></div>
-    <div hx-get="/footer" hx-trigger="load" hx-swap="outerHTML"></div>
+    <%- include('./home.ejs', inicio) %>
+    <%- include('./team.ejs', equipe) %>
+    <%- include('./about.ejs', sobre) %>
+    <%- include('./footer.ejs', rodape) %>
   </body>
 </html>

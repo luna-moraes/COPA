@@ -1,9 +1,176 @@
-<!doctype html><html><head><meta charset="utf-8"><title>COPA</title><link rel="icon" type="image/x-icon" href="/img/20.ico"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css" integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls" crossorigin="anonymous"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/grids-responsive-min.css"/><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"><script src="https://unpkg.com/htmx.org@2.0.2" integrity="sha384-Y7hw+L/jvKeWIRRkqWYfPcvVxHzVzn5REgzbawhxAuQGwX1XWe70vji+VSeHOThJ" crossorigin="anonymous"></script><style>body {
-        font-family: 'Montserrat', 'Playfair Display', Georgia, 'Times New Roman', serif;
-      }
-      body > * {
-        padding: 0 5rem;
-      }
-      .bordered-button {
-        border-radius: 30px;
-      }</style><script defer="defer" src="runtime.83815065bc2ad423a4ef.js"></script><script defer="defer" src="main.5881fbd2901f6ce16534.js"></script></head><body><div hx-get="/home" hx-trigger="load" hx-swap="outerHTML"></div><div hx-get="/team" hx-trigger="load" hx-swap="outerHTML"></div><div hx-get="/about" hx-trigger="load" hx-swap="outerHTML"></div><div hx-get="/footer" hx-trigger="load" hx-swap="outerHTML"></div></body></html>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>COPA</title>
+    <link rel="icon" type="image/x-icon" href="/img/20.ico">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css" integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/grids-responsive-min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <div id="home" style="background: url(/img/linho3.jpeg);">
+  <div class="content">
+    <img class="image" src="/img/12.png" alt="COPA" style="margin: 0 0 3rem 0;width: 14cm;;">
+
+    <p class="message" style="color: black;font-size: 1.5rem;font-weight: 580;margin: 0 0 5rem 0;">Somos um espaço de psicoterapia online que oferta uma escuta ética promovida por profissionais comprometidos com a sensibilidade que envolve os desígnios desse fazer, apostando nas diferentes formas de ser e estar no mundo.</p>
+
+    <a class="button bordered-button" href="#team" style="color: white;background: #9B1F16;font-size: 1.2rem;font-weight: 580;padding: 1rem 1.5rem;">
+      ATENDIMENTO ONLINE
+    </a>
+  </div>
+  <div class="divider" style=""></div>
+
+</div>
+
+    <div id="team" style="background: #FAF1D2;border-bottom: 1px solid #9B1F16;">
+  <div class="header">
+    <h2 class="title" style="color: #9B1F16;font-size: 2rem;margin: 3rem 0 2rem 0;">
+      Nossa Equipe
+    </h1>
+  </div>
+  <div class="professionals pure-g" style="padding: 0 0 7rem 0;">
+    
+      <div
+        class="professional pure-u-1 pure-u-md-1-3"
+        style="padding: 3rem 3.33rem 0 3.33rem;padding: 0 6.66rem 0 0;"
+      >
+        <img
+          class="image pure-img"
+          src="/img/luna.jpeg"
+          alt="foto"
+        >
+        <h3 class="name" style="color: black;font-size: 1.1rem;">
+          Luna Moraes de Almeida
+        </h2>
+        <p class="graduation" style="color: black;font-size: 1.1rem;">
+          PSICÓLOGA E PSICANALISTA
+        </p>
+        <p class="crp" style="color: black;font-size: 1.1rem;padding: 0 0 .5rem 0;">
+          CRP 11/21449
+        </p>
+        <a
+          class="button bordered-button"
+          href="https://wa.me/5588988194892"
+          target=_blank
+          style="color: white;background: #9B1F16;font-size: .9rem;font-weight: bold;padding: .7rem 1.2rem;"
+        >
+          Entre em Contato
+        </a>
+      </div>
+    
+      <div
+        class="professional pure-u-1 pure-u-md-1-3"
+        style="padding: 3rem 3.33rem 0 3.33rem;"
+      >
+        <img
+          class="image pure-img"
+          src="/img/debora.jpeg"
+          alt="foto"
+        >
+        <h3 class="name" style="color: black;font-size: 1.1rem;">
+          Débora Teresa dos Santos Meneses
+        </h2>
+        <p class="graduation" style="color: black;font-size: 1.1rem;">
+          PSICÓLOGA E PSICANALISTA
+        </p>
+        <p class="crp" style="color: black;font-size: 1.1rem;padding: 0 0 .5rem 0;">
+          CRP 17/7450
+        </p>
+        <a
+          class="button bordered-button"
+          href="https://wa.me/5584998352979"
+          target=_blank
+          style="color: white;background: #9B1F16;font-size: .9rem;font-weight: bold;padding: .7rem 1.2rem;"
+        >
+          Entre em Contato
+        </a>
+      </div>
+    
+      <div
+        class="professional pure-u-1 pure-u-md-1-3"
+        style="padding: 3rem 3.33rem 0 3.33rem;padding: 3rem 0 0 6.66rem;"
+      >
+        <img
+          class="image pure-img"
+          src="/img/julio.jpeg"
+          alt="foto"
+        >
+        <h3 class="name" style="color: black;font-size: 1.1rem;">
+          Júlio César Oliveira Chaves Filho
+        </h2>
+        <p class="graduation" style="color: black;font-size: 1.1rem;">
+          PSICÓLOGO E PSICANALISTA
+        </p>
+        <p class="crp" style="color: black;font-size: 1.1rem;padding: 0 0 .5rem 0;">
+          CRP 11/19441
+        </p>
+        <a
+          class="button bordered-button"
+          href="https://wa.me/5588996300245"
+          target=_blank
+          style="color: white;background: #9B1F16;font-size: .9rem;font-weight: bold;padding: .7rem 1.2rem;"
+        >
+          Entre em Contato
+        </a>
+      </div>
+    
+  </div>
+  <div class="divider" style=""></div>
+
+</div>
+
+    <div id="about" style="background: #FAF1D2;background-blend-mode: lighten;">
+  <div class="header">
+    <h2 class="title" style="color: #9B1F16;font-size: 2rem;font-weight: 600;margin: 7rem 0 0 0;">
+      Um pouco sobre nosso trabalho
+    </h2>
+  </div>
+  <div class="content">
+    <p class="citacao" style="color: black;font-size: 1.1rem;font-weight: 600;margin: 2rem 0 0 0;white-space: normal;text-align: justify;max-width: 40rem;line-height: 1.4rem;">&#34;... havia lido em algum lugar que as palavras eram conchas de clamores
+antigos. Eu queria ir atrás dos clamores antigos que estariam guardados
+dentro das palavras.&#34;
+_Trecho de “Escova”, de Manoel de Barros.</p>
+    <p class="description" style="color: black;font-size: 1.1rem;font-weight: 600;margin: 3rem 0 0 0;padding: 0 0 4rem 0;white-space: normal;text-align: justify;max-width: 40rem;line-height: 1.8rem;">Quem escuta está atento aos mistérios contidos no dizer. Essa tarefa
+é um ofício dos que buscam ouvir o que na história de cada um remonta
+às causas de seu existir, que é particular, único, próprio. O espaço
+Copa nasce de um compromisso atravessado pela psicanálise, que se
+orienta num tratamento pela via do desejo, denúncia do inconsciente
+no sujeito. Propomos, a quem estiver disposto, a oferta de um local
+de escuta daquilo que é mais singular: a existência, com seus 
+sofrimentos e prazeres. Quem fala, também ouve. Ouve e sente no 
+corpo ecos pulsantes que outorgam direitos ao que lhes é alheio, 
+estranho, dolor. Ouvir é um trabalho a dois, movido pelo desejo 
+de saber, que põe em circulação as forças da vida, vertendo
+&#34;clamores antigos&#34; em escrita própria. </p>
+  </div>
+  <div class="divider" style=""></div>
+
+</div>
+
+    <div id="footer" style="background: url(/img/linho3.jpeg);"> 
+  <div class="left" style="">
+    <img class="imagem" src="/img/15.png" alt="COPA" style="margin: 80px 0 0 0;width: 6cm;">
+    <p class="subtitle" style="color: black;font-size: 1rem;">
+      
+    </p>
+  </div>
+  <div class="right" style="">
+    <h2 class="title" style="color: black;font-size: 1.5rem;margin: 80px 0 0 0;">
+      Contato
+    </h3>
+    <p class="description" style="color: black;font-size: 1rem;font-weight: 500;">espacocopacontato@gmail.com</p>
+    
+      <a target="_blank" class="link-icon" style="" href="https://www.instagram.com/espaco.copa?igsh=MW1jcXlzZXNudWFvMg==">
+        <img alt="instagram" class="icon-instagram" style="margin: 0 0 1rem 0;width: 2rem;" src="/img/instagram.png">
+      </a>
+    
+    
+  </div>
+</div>
+
+  </body>
+</html>

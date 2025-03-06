@@ -8,40 +8,26 @@
   "private": true,
   "scripts": {
     "start": "dotenvx run -f .env.prod -- node server/serve.js",
-    "start:w": "nodemon -e yaml,html --exec \"dotenvx run -f .env.prod -- node server/serve.js\"",
-    "web": "webpack serve --mode=development --config webpack.dev.config.js",
-    "web:build": "webpack build --mode=production --config webpack.prod.config.js",
-    "serve": "nodemon -e ts,yaml,ejs,less,html --exec \"dotenvx run -f .env.dev -- ts-node src/serve.ts\"",
-    "serve:nw": "dotenvx run -f .env.dev -- ts-node src/serve.ts",
-    "serve:build": "tsc",
-    "lint": "eslint app public/js --fix"
+    "build": "tsc && lessc assets/less/index.less dist/styles.css && dotenvx run -f .env.prod -- node server/web-builder.js",
+    "serve": "nodemon -e ts,yaml,ejs,less --exec \"lessc assets/less/index.less assets/styles.css && dotenvx run -f .env.dev -- ts-node src/serve.ts\"",
+    "serve:nw": "lessc assets/less/index.less assets/styles.css && dotenvx run -f .env.dev -- ts-node src/serve.ts"
   },
   "dependencies": {
     "@dotenvx/dotenvx": "^1.33.0",
-    "axios": "^1.7.4",
+    "@types/fs-extra": "^11.0.4",
     "ejs": "^3.1.10",
-    "eslint": "^9.9.0",
     "express": "^4.19.2",
+    "fs-extra": "^11.3.0",
     "js-yaml": "^4.1.0",
     "zod": "^3.23.8"
   },
   "devDependencies": {
-    "@eslint/js": "^9.9.0",
     "@types/ejs": "^3.1.5",
     "@types/express": "^4.17.21",
     "@types/js-yaml": "^4.0.9",
-    "copy-webpack-plugin": "^12.0.2",
-    "css-loader": "^7.1.2",
-    "globals": "^15.9.0",
-    "html-webpack-plugin": "^5.6.0",
     "less": "^4.2.0",
-    "less-loader": "^12.2.0",
     "nodemon": "^3.1.4",
-    "style-loader": "^4.0.0",
     "ts-node": "^10.9.2",
-    "typescript": "^5.5.4",
-    "webpack": "^5.93.0",
-    "webpack-cli": "^5.1.4",
-    "webpack-dev-server": "^5.0.4"
+    "typescript": "^5.5.4"
   }
 }

@@ -13,6 +13,4 @@ export const content = ContentModel.parse(
         'utf8',
     ))
 )
-export const publicPath = env.envName === 'PROD'
-    ? resolve(__dirname, '..', 'dist')
-    : resolve (__dirname, '..', 'assets')
+export const publicPath = resolve (__dirname, '..', 'assets')

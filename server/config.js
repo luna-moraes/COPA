@@ -11,6 +11,4 @@ const env_model_1 = require("./model/env-model");
 const content_model_1 = require("./model/content-model");
 exports.env = env_model_1.EnvModel.parse(process.env);
 exports.content = content_model_1.ContentModel.parse(js_yaml_1.default.load((0, node_fs_1.readFileSync)((0, node_path_1.resolve)(__dirname, '..', 'resources', 'content.yaml'), 'utf8')));
-exports.publicPath = exports.env.envName === 'PROD'
-    ? (0, node_path_1.resolve)(__dirname, '..', 'dist')
-    : (0, node_path_1.resolve)(__dirname, '..', 'assets');
+exports.publicPath = (0, node_path_1.resolve)(__dirname, '..', 'assets');
