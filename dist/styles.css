@@ -5,6 +5,11 @@ body {
 body > * {
   padding: 0 5rem;
 }
+@media screen and (width < 768px) {
+  body > * {
+    padding: 0 1rem;
+  }
+}
 .bordered-button {
   border-radius: 30px;
 }
@@ -21,14 +26,36 @@ a.button {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
 }
 #home .content {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+#home .content .image {
+  width: 14cm;
+}
+#home .content .message-content {
+  max-width: 60rem;
 }
 #home .content .message {
+  font-size: 1.4rem;
   margin: 0;
-  white-space: pre-wrap;
+  text-align: center;
+}
+@media screen and (width < 1024px) {
+  #home .content .message {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+  #home .content .message-content {
+    width: 100%;
+  }
+  #home .content .image {
+    width: 90%;
+  }
 }
 #about {
   display: flex;
@@ -55,10 +82,25 @@ a.button {
 #team .professional {
   box-sizing: border-box;
 }
-@media screen and (min-width: 768px) {
+#team .professional .name {
+  min-width: 13rem;
+}
+@media screen and (min-width: 1024px) {
   #team .professional {
+    padding: 3rem 3.33rem 0 3.33rem;
     padding-top: 0 !important;
     padding-bottom: 0 !important;
+  }
+  #team .professional:first-child {
+    padding: 0 6.66rem 0 0;
+  }
+  #team .professional:last-child {
+    padding: 3rem 0 0 6.66rem;
+  }
+}
+@media screen and (width < 1024px) {
+  #team .professional {
+    padding: 3rem 3rem;
   }
 }
 @media screen and (width < 768px) {
@@ -71,8 +113,40 @@ a.button {
   display: flex;
   justify-content: space-between;
 }
+#footer .imagem {
+  margin-top: 80px;
+  width: 6cm;
+}
+@media screen and (width < 768px) {
+  #footer {
+    flex-direction: column-reverse;
+    justify-content: flex-start;
+  }
+  #footer .title {
+    margin-top: 2rem;
+  }
+  #footer .imagem {
+    margin-top: 2rem;
+    width: 5cm;
+  }
+}
 #footer h2 {
   margin: 0;
+}
+@media screen and (width < 768px) {
+  #footer .left {
+    text-align: center;
+  }
+}
+@media screen and (width < 768px) {
+  #footer .right {
+    text-align: center;
+  }
+}
+@media screen and (min-width: 768px) {
+  #footer .right .title {
+    margin-top: 80px;
+  }
 }
 #footer .right .description {
   white-space: pre-wrap;
