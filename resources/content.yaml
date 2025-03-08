@@ -16,16 +16,15 @@ inicio:
 
     fonte: 
         subtitulo: 1rem
-        mensagem: 1.5rem
         botao: 1.2rem
+
     preenchimento:
         botao: 1rem 1.5rem
     espaco:
-        imagem: 0 0 3rem 0
+        imagem: 2rem 0 3rem 0
         subtitulo: 0 0 1.4rem 0
         mensagem: 0 0 5rem 0
-    largura:
-        imagem: 14cm
+
     peso:
         mensagem: "580"
         botao: "580"
@@ -137,9 +136,6 @@ equipe:
     preenchimento:
         crp: 0 0 .5rem 0
         botao: .7rem 1.2rem
-        primeiro_profissional: 0 6.66rem 0 0
-        profissional: 3rem 3.33rem 0 3.33rem
-        ultimo_profissional: 3rem 0 0 6.66rem
         profissionais: 0 0 7rem 0
     espaco:
         titulo: 3rem 0 2rem 0
@@ -162,10 +158,7 @@ rodape:
         fonte:
             titulo: 1.5rem
             subtitulo: 1rem
-        espaco:
-            imagem: 80px 0 0 0
-        largura:
-            imagem: 6cm
+
 
     # Lado Direito do Rodapé
     direita:
@@ -175,6 +168,8 @@ rodape:
             espacocopacontato@gmail.com
         instagramLink: "https://www.instagram.com/espaco.copa?igsh=MW1jcXlzZXNudWFvMg=="
         instagramImagem: instagram.png
+        whatsappLink: "https://wa.me/558499879669"
+        whatsappImagem: whatsapp.png
 
         # Estilo Direito do Rodapé
         cor:
@@ -184,10 +179,11 @@ rodape:
             titulo: 1.5rem
             descricao: 1rem
         espaco:
-            titulo: 80px 0 0 0
-            instagramImagem: 0 0 1rem 0
+            instagramImagem: 0 1rem 1rem 0
+            whatsappImagem: 0 0 1rem 0
         peso:
             descricao: "500"
         largura:
             instagramImagem: 2rem
+            whatsappImagem: 2rem
         

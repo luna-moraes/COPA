@@ -2,7 +2,10 @@
   <div class="content">
     <img class="image" src="/img/<%= imagem %>" alt="COPA" style="<%= styles.imagem ?? '' %>;">
 
-    <p class="message" style="<%= styles.mensagem ?? '' %>"><%= mensagem %></p>
+    <div class="message-content">
+      <p class="message" style="<%= styles.mensagem ?? '' %>"><%= mensagem %></p>
+    </div>
+    
 
     <a class="button bordered-button" href="#team" style="<%= styles.botao ?? '' %>">
       <%= botao %>

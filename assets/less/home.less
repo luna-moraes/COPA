@@ -3,14 +3,40 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
 
   .content {
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+
+    .image {
+      width: 14cm;
+    }
+    .message-content {
+      max-width: 60rem;
+    }
 
     .message {
+      font-size: 1.4rem;
       margin: 0;
-      white-space: pre-wrap;
+      text-align: center;
     }
+
+    @media screen and (width < @tablet-width) {
+      .message {
+        font-size: 1.2rem;
+        text-align: center;
+      }
+      .message-content {
+        width: 100%;
+      }
+      .image {
+        width: 90%;
+      }
+    }
+
+   
   }
 }
