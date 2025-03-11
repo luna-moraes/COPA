@@ -7,7 +7,7 @@ import {content} from './config'
 const INPUT_PAGE_DIR = 'pages'
 const INPUT_PAGE = 'index.ejs'
 const INPUT_ASSETS_DIR = 'assets'
-const INPUT_ASSETS = ['img/', 'styles.css']
+const INPUT_ASSETS = ['img/', 'styles.css', 'robots.txt', 'sitemap.xml']
 
 const OUTPUT_DIR = 'dist'
 const OUTPUT_HTML = 'index.html'

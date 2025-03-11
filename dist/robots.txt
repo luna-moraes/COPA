@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://espacocopa.com.br/sitemap.xml
