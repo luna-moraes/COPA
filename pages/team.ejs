@@ -12,7 +12,7 @@
       >
         <img
           class="image pure-img"
-          src="/img/<%= prof.foto %>"
+          src="<%= asset(`/img/${prof.foto}`) ?? '' %>"
           alt="foto"
         >
         <h3 class="name" style="<%= styles.nome ?? '' %>">

@@ -9,7 +9,7 @@ const util_1 = require("./util");
 const app = (0, express_1.default)();
 app.set('view engine', 'ejs');
 app.get('/', (_, res) => {
-    res.render((0, util_1.page)('index'), config_1.content);
+    res.render((0, util_1.page)('index'), Object.assign(Object.assign({}, config_1.content), { asset: util_1.asset }));
 });
 app.use(express_1.default.static(config_1.publicPath));
 app.listen(config_1.env.port, () => {

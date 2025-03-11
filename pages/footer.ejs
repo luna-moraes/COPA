@@ -1,6 +1,6 @@
-<div id="footer" style="<%=styles.pagina ?? '' %>"> 
+<div id="footer" style="<%=styles.pagina ?? '' %>">
   <div class="left" style="<%= esquerda.styles.pagina ?? '' %>">
-    <img class="imagem" src="/img/<%= esquerda.imagem %>" alt="COPA" style="<%= esquerda.styles.imagem %>">
+    <img class="imagem" src="<%= asset(`/img/${esquerda.imagem}`) ?? '' %>" alt="COPA" style="<%= esquerda.styles.imagem %>">
     <p class="subtitle" style="<%= esquerda.styles.subtitulo ?? ''%>">
       <%= esquerda.subtitulo %>
     </p>
@@ -13,12 +13,12 @@
     <div>
      <% if (direita.instagramImagem && direita.instagramLink) { %>
       <a target="_blank" class="link-icon" style="<%= direita.styles.instagramLink %>" href="<%= direita.instagramLink %>">
-        <img alt="instagram" class="icon-instagram" style="<%= direita.styles.instagramImagem %>" src="/img/<%= direita.instagramImagem ?? '' %>">
+        <img alt="instagram" class="icon-instagram" style="<%= direita.styles.instagramImagem %>" src="<%= asset(`/img/${direita.instagramImagem}`) ?? '' %>">
       </a>
     <% } %>
     <% if (direita.whatsappImagem && direita.whatsappLink) { %>
       <a target="_blank" class="link-icon" style="<%= direita.styles.whatsappLink %>" href="<%= direita.whatsappLink %>">
-        <img alt="whatsapp" class="icon-whatsapp" style="<%= direita.styles.whatsappImagem %>" src="/img/<%= direita.whatsappImagem ?? '' %>">
+        <img alt="whatsapp" class="icon-whatsapp" style="<%= direita.styles.whatsappImagem %>" src="<%= asset(`/img/${direita.whatsappImagem}`) ?? '' %>">
       </a>
     <% } %> 
     </div>

@@ -17,6 +17,7 @@ const fs_extra_1 = __importDefault(require("fs-extra"));
 const ejs_1 = __importDefault(require("ejs"));
 const node_path_1 = __importDefault(require("node:path"));
 const config_1 = require("./config");
+const util_1 = require("./util");
 const INPUT_PAGE_DIR = 'pages';
 const INPUT_PAGE = 'index.ejs';
 const INPUT_ASSETS_DIR = 'assets';
@@ -28,18 +29,16 @@ function build() {
         if (!node_fs_1.default.existsSync(OUTPUT_DIR)) {
             node_fs_1.default.mkdirSync(OUTPUT_DIR, { recursive: true });
         }
-        const templateDirPath = node_path_1.default.resolve(__dirname, '..', INPUT_PAGE_DIR);
+        const templateDirPath = node_path_1.default.join(__dirname, '..', INPUT_PAGE_DIR);
         const templatePath = node_path_1.default.join(templateDirPath, INPUT_PAGE);
-        const outputPath = node_path_1.default.resolve(__dirname, '..', OUTPUT_DIR);
+        const outputPath = node_path_1.default.join(__dirname, '..', OUTPUT_DIR);
         const outputHtmlPath = node_path_1.default.join(outputPath, OUTPUT_HTML);
         const template = node_fs_1.default.readFileSync(templatePath, "utf8");
-        const html = ejs_1.default.render(template, config_1.content, {
-            views: [templateDirPath]
-        });
+        const html = ejs_1.default.render(template, Object.assign(Object.assign({}, config_1.content), { asset: util_1.asset }), { views: [templateDirPath] });
         node_fs_1.default.writeFileSync(outputHtmlPath, html);
         console.log(`✔ Done: ${OUTPUT_HTML}`);
         for (const asset of INPUT_ASSETS) {
-            const assetInputPath = node_path_1.default.resolve(__dirname, '..', INPUT_ASSETS_DIR, asset);
+            const assetInputPath = node_path_1.default.join(__dirname, '..', INPUT_ASSETS_DIR, asset);
             const assetOutputPath = node_path_1.default.join(outputPath, asset);
             yield fs_extra_1.default.copy(assetInputPath, assetOutputPath);
             console.log(`✔ Done: ${assetOutputPath}`);

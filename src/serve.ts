@@ -1,13 +1,13 @@
 import express from 'express'
 import {content, env, publicPath} from './config'
-import {page} from './util'
+import {page, asset} from './util'
 
 const app = express()
 
 app.set('view engine', 'ejs')
 
 app.get('/', (_, res) => {
-    res.render(page('index'), content)
+    res.render(page('index'), {...content, asset})
 })
 
 app.use(express.static(publicPath))

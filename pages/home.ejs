@@ -1,6 +1,6 @@
 <div id="home" style="<%= styles.pagina ?? '' %>">
   <div class="content">
-    <img class="image" src="/img/<%= imagem %>" alt="COPA" style="<%= styles.imagem ?? '' %>;">
+    <img class="image" src="<%= asset(`/img/${imagem}`) ?? '' %>" alt="COPA" style="<%= styles.imagem ?? '' %>">
 
     <div class="message-content">
       <p class="message" style="<%= styles.mensagem ?? '' %>"><%= mensagem %></p>
