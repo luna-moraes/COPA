@@ -2,11 +2,54 @@
   display: flex;
   justify-content: space-between;
 
+  .imagem {
+    margin-top: 80px;
+    width: 6cm;
+  }
+
+
+  @media screen and (width < @mobile-width) {
+      & {
+        flex-direction: column-reverse;
+        justify-content: flex-start;
+      }
+      
+      .title {
+        margin-top: 2rem;
+      }
+      .imagem {
+        margin-top: 2rem;
+        width: 5cm;
+      }
+    }
+  
+
   h2 {
     margin: 0;
   }
 
+
+  .left { 
+    @media screen and (width < @mobile-width){
+      & {
+        text-align: center; 
+      }
+    }
+    
+    
+  }
   .right {
+    @media screen and (width < @mobile-width){
+      & {
+      text-align: center; 
+      }
+    }
+    
+    @media screen and (min-width: @mobile-width) {
+      .title {
+        margin-top: 80px;
+      }
+    }
     .description {
       white-space: pre-wrap;
     }

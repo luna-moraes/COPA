@@ -12,18 +12,47 @@
   .professional {
     box-sizing: border-box;
 
-    @media screen and (min-width: 768px) {
+    .name {
+      min-width: 13rem;
+    }
+
+    
+
+    @media screen and (min-width: @tablet-width) {
+      & {
+        padding: 3rem 3.33rem 0 3.33rem;
+      }
+      
+  
+      &:first-child {
+        padding: 0 6.66rem 0 0;
+      }
+  
+      &:last-child {
+        padding: 3rem 0 0 6.66rem;
+      }
       & {
         padding-top: 0 !important;
         padding-bottom: 0 !important;
       }
     }
 
-    @media screen and (width < 768px) {
+    @media screen and (width < @tablet-width) {
+      
+      & {
+        padding: 3rem 3rem; 
+      }
+  
+    }
+
+    @media screen and (width < @mobile-width) {
+      
       & {
         padding-left: 0 !important;
         padding-right: 0 !important;
       }
     }
+
+    
   }
 }
