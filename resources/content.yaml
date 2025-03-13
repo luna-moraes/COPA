@@ -17,6 +17,7 @@ inicio:
     fonte: 
         subtitulo: 1rem
         botao: 1.2rem
+        mensagem: 1.3rem
 
     preenchimento:
         botao: 1rem 1.5rem
