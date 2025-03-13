@@ -83,7 +83,7 @@ a.button {
   box-sizing: border-box;
 }
 #team .professional .name {
-  min-width: 13rem;
+  min-width: 25rem;
 }
 @media screen and (min-width: 1024px) {
   #team .professional {
