@@ -12,9 +12,12 @@
   .professional {
     box-sizing: border-box;
 
-    .name {
-      min-width: 25rem;
+    @media screen and (min-width: @mobile-width) {
+      .name {
+        min-width: 25rem;
+      }
     }
+    
 
     
 
@@ -53,6 +56,5 @@
       }
     }
 
-    
   }
 }
