@@ -2,7 +2,7 @@ inicio:
     # Conteúdo do Início
     imagem: 12.png
     mensagem: |-
-        Somos um espaço de psicoterapia online que oferta uma escuta ética promovida por profissionais comprometidos com a sensibilidade que envolve os desígnios desse fazer, apostando nas diferentes formas de ser e estar no mundo.
+        Aos que desejam falar e ser escutados em seu sofrimento, o Copa é um espaço de psicoterapia online, que oferece acolhimento e escuta qualificada, proporcionado por profissionais comprometidos com a sensibilidade de seu ofício. Aqui acreditamos que a fala carrega poder transformador.
        
     botao: ATENDIMENTO ONLINE
 
@@ -99,14 +99,14 @@ equipe:
           crp: CRP 11/21449
           contato: "5588988194892"
           botao: "Entre em Contato"
-        - foto: debora.jpeg
+        - foto: debora.jpg
           nome: Débora Teresa dos Santos Meneses
           formacao: PSICÓLOGA E PSICANALISTA
           descricao: caixa de texto
           crp: CRP 17/7450
           contato: "5584998352979"
           botao: "Entre em Contato"
-        - foto: julio.jpeg
+        - foto: julio.jpg
           nome: Júlio César Oliveira Chaves Filho
           formacao: PSICÓLOGO E PSICANALISTA
           descricao: caixa de texto
