@@ -95,21 +95,21 @@ equipe:
         - foto: luna.jpeg
           nome: Luna Moraes de Almeida
           formacao: PSICÓLOGA E PSICANALISTA
-          descricao: caixa de texto
+          descricao: Atendimentos online e presenciais em Mossoró-RN
           crp: CRP 11/21449
           contato: "5588988194892"
           botao: "Entre em Contato"
         - foto: debora.jpg
           nome: Débora Teresa dos Santos Meneses
           formacao: PSICÓLOGA E PSICANALISTA
-          descricao: caixa de texto
+          descricao: Atendimentos online e presenciais em Natal-RN
           crp: CRP 17/7450
           contato: "5584998352979"
           botao: "Entre em Contato"
         - foto: julio.jpeg
           nome: Júlio César Oliveira Chaves Filho
           formacao: PSICÓLOGO E PSICANALISTA
-          descricao: caixa de texto
+          descricao: Atendimentos online e presenciais em Icapuí-CE
           crp: CRP 11/19441
           contato: "5588996300245"
           botao: "Entre em Contato"
@@ -135,11 +135,15 @@ equipe:
     peso:
         botao: bold
     preenchimento:
-        crp: 0 0 .5rem 0
+        crp: 0 0 .0rem 0
         botao: .7rem 1.2rem
         profissionais: 0 0 7rem 0
+        descricao: 0 0 .5rem 0
     espaco:
         titulo: 3rem 0 2rem 0
+        crp: .3rem 0 0 0 
+        formacao: 0 0 0 0 
+        descricao: .5rem 0 .7rem 0
     bordaInferior:
         pagina: "1px solid #9B1F16"
 rodape:
